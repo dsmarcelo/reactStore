@@ -297,3 +297,4 @@ back-end/.env
 **/coverage
 **/.nyc_output
 workspace.code-workspace
+reactStore.code-workspace
