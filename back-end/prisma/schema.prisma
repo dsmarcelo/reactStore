@@ -16,3 +16,13 @@ model Product {
   category  String
   onSale    Boolean
 }
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String   @unique
+  email     String   @unique
+  password  String   @unique
+  role      String
+}
