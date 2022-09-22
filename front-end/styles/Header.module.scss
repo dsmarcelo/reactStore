@@ -1,0 +1,52 @@
+$background-color: #e7e7e7;
+$background-color-lighter-2: #a5a5a5;
+$background-color-lighter: #bdbdbd;
+
+.header {
+  background-color: $background-color-lighter;
+}
+
+.header_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header_logo_container {
+  width: 100px;
+  max-width: 20vw;
+}
+
+.header_logo_img {
+  height: auto;
+  width: 100%;
+}
+
+.header_userImg {
+  width: 25%;
+  text-align: center;
+}
+
+.header_SearchBar {
+  background-color: $background-color;
+  border: 0;
+  padding: 0.5rem;
+  height: 36px;
+  width: 450px;
+  max-width: 50vw;
+  border-radius: 12px;
+  outline: 0;
+  &::placeholder {
+    text-align: center;
+  }
+  &:focus {
+    background-color: $background-color-lighter-2;
+  }
+}

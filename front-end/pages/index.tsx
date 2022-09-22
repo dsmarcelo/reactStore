@@ -1,39 +1,25 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import ProductContainer from '../components/productContainer'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import Header from '../components/Header';
+import ProductContainer from '../components/productContainer';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>React Store</title>
         <meta name="description" content="A store created with NextJS" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="Logo.ico" />
       </Head>
 
+      <Header/>
       <main>
-        <h1 className={styles.title}>
-          React Store
-        </h1>
-
+        <h1 className={styles.title}>React Store</h1>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

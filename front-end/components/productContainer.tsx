@@ -1,6 +1,6 @@
 import ProductCard from './productCard';
 import { IProduct } from '../interfaces/productI';
-import styles from '../styles/ProductCard.module.css';
+import styles from '../styles/ProductCard.module.scss';
 
 type IProps = {
   products: IProduct[];
