@@ -2,11 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
-
-module.exports = {
   images: {
     domains: ["api.lorem.space"]
   },
-  nextConfig,
 }
+
+module.exports = nextConfig
