@@ -1,7 +1,7 @@
 import Image from 'next/future/image';
 import React from 'react';
 import { IProduct } from '../interfaces/productI';
-import styles from '../styles/ProductCard.module.css';
+import styles from '../styles/ProductCard.module.scss';
 
 interface Props {
   product: IProduct;
