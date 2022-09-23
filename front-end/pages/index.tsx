@@ -1,11 +1,10 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import CategoryContainer from '../components/CategoriesContainer';
 import Header from '../components/Header';
-import ProductContainer from '../components/productContainer';
 import styles from '../styles/Home.module.css';
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ categoryList }) => {
   return (
     <div>
       <Head>
@@ -15,11 +14,23 @@ const Home: NextPage = () => {
       </Head>
 
       <Header/>
-      <main>
-        <h1 className={styles.title}>React Store</h1>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Bem vindo a React Store</h1>
+        <CategoryContainer categoryList={categoryList} />
       </main>
     </div>
   );
 };
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await fetch('https://api.escuelajs.co/api/v1/categories')
+  const categoryList = await response.json();
+  return {
+    props: {
+      categoryList,
+    },
+    revalidate: 60,
+  }
+}
 
 export default Home;
