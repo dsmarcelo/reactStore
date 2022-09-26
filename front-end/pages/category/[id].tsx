@@ -9,7 +9,6 @@ import Header from '../../components/Header';
 export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(`https://api.escuelajs.co/api/v1/categories`);
   const data: ICategory[] = await response.json();
-  console.log('🚀 ~ constgetStaticPaths:GetStaticPaths= ~ data', data[0]);
 
   const paths = data.map((category) => {
     return {
