@@ -2,9 +2,14 @@ import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import CategoryContainer from '../components/CategoriesContainer';
 import Header from '../components/Header';
+import { ICategory } from '../interfaces/category';
 import styles from '../styles/Home.module.css';
 
-const Home: NextPage = ({ categoryList }) => {
+interface Props {
+  categoryList: ICategory[];
+}
+
+const Home: React.FC<Props> = ({ categoryList }) => {
   return (
     <div>
       <Head>
@@ -24,12 +29,13 @@ const Home: NextPage = ({ categoryList }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch('https://api.escuelajs.co/api/v1/categories')
-  const categoryList = await response.json();
+  const allCategories: ICategory[] = await response.json();
+  const categoryList = allCategories.slice(0,5)
   return {
     props: {
       categoryList,
     },
-    revalidate: 60,
+    revalidate: 86400,
   }
 }
 

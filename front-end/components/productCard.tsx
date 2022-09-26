@@ -2,10 +2,17 @@ import Image from 'next/future/image';
 import React from 'react';
 import { IProduct } from '../interfaces/productI';
 import styles from '../styles/ProductCard.module.scss';
+import imgPlaceholder from '..\public\imgPlaceholder.png'
 
 interface Props {
   product: IProduct;
 }
+
+// const checkImage = (image: string) => {
+//   if (image.toLowerCase.includes('any')) {
+//     return '..\public\imgPlaceholder.png';
+//   }
+// }
 
 const ProductCard: React.FC<Props> = ({ product }) => {
   const { title, price, images } = product;
@@ -18,8 +25,6 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           alt="Product Image"
           sizes='100'
           fill
-          // width="100px"
-          // height="100px"
         />
       </div>
       <div className={styles.productCard_text_div}>
