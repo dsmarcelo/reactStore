@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ["api.lorem.space", "www.google.com", "placeimg.com"]
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 }
 
 module.exports = nextConfig
