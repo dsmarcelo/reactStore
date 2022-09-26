@@ -18,7 +18,7 @@ const Home: React.FC<Props> = ({ categoryList }) => {
         <link rel="icon" href="Logo.ico" />
       </Head>
 
-      <Header/>
+      <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>Bem vindo a React Store</h1>
         <CategoryContainer categoryList={categoryList} />
@@ -28,15 +28,15 @@ const Home: React.FC<Props> = ({ categoryList }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch('https://api.escuelajs.co/api/v1/categories')
+  const response = await fetch('https://api.escuelajs.co/api/v1/categories');
   const allCategories: ICategory[] = await response.json();
-  const categoryList = allCategories.slice(0,5)
+  const categoryList = allCategories.slice(0, 5);
   return {
     props: {
       categoryList,
     },
     revalidate: 86400,
-  }
-}
+  };
+};
 
 export default Home;
