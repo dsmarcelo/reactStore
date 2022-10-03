@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["api.lorem.space"]
+    domains: ["api.lorem.space", "www.google.com", "placeimg.com"]
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 }
 

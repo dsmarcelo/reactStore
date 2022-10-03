@@ -3,6 +3,10 @@ $background-color-lighter-2: #a5a5a5;
 $background-color-lighter: #bdbdbd;
 
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
   background-color: $background-color-lighter;
 }
 
@@ -21,16 +25,17 @@ $background-color-lighter: #bdbdbd;
 
 .header_logo_container {
   width: 100px;
-  max-width: 20vw;
 }
 
 .header_logo_img {
   height: auto;
   width: 100%;
+  max-width: 20vw;
 }
 
 .header_userImg {
-  width: 25%;
+  width: 100px;
+  max-width: 20vw;
   text-align: center;
 }
 

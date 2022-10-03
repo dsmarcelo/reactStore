@@ -18,8 +18,6 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           alt="Product Image"
           sizes='100'
           fill
-          // width="100px"
-          // height="100px"
         />
       </div>
       <div className={styles.productCard_text_div}>
