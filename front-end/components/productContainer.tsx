@@ -1,4 +1,4 @@
-import ProductCard from './ProductCard';
+import ProductCard from './productCard';
 import { IProduct } from '../interfaces/productI';
 import styles from '../styles/ProductCard.module.scss';
 

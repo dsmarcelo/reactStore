@@ -1,4 +1,4 @@
-import CategoryCard from './CategoryCard';
+import CategoryCard from './categoryCard';
 import { ICategory } from '../interfaces/category';
 import styles from '../styles/Category.module.scss';
 
