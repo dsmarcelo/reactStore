@@ -5,9 +5,6 @@ const nextConfig = {
   images: {
     domains: ["api.lorem.space", "www.google.com", "placeimg.com"]
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 }
 
 module.exports = nextConfig
