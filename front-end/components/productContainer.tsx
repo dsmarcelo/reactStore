@@ -9,7 +9,7 @@ type IProps = {
 const ProductContainer: React.FC<IProps> = ({ products }) => {
   return (
     <section className={styles.productCardContainer}>
-      {products.map((product: IProduct, i: number) => (
+      {products.map((product: IProduct) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </section>
