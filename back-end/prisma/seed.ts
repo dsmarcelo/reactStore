@@ -1,11 +1,20 @@
 import { categories } from '../seed/categories';
+import { products } from '../seed/products';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-interface ICategory {
+export type ICategory = {
   id: string;
   name: string;
+}
+
+interface IProduct{
+  name: string;
+  price: number;
+  description: string;
+  categoryId: string;
+  images: string[]
 }
 
 async function main() {
@@ -20,35 +29,20 @@ async function main() {
 
   const allCategories = await prisma.category.findMany();
 
-  const products = [
-    {
-      name: 'Wireless Gaming Mouse',
-      price: 150,
-      categoryId: allCategories[0].id
-    },
-    {
-      name: 'Oled TV 65"',
-      price: 1799,
-      categoryId: allCategories[1].id
-    },
-    {
-      name: 'Coffee Maker',
-      price: 50,
-      categoryId: allCategories[2].id
-    },
-    {
-      name: 'White Shirt',
-      price: 20,
-      categoryId: allCategories[3].id
-    },
-  ]
+  function getRandomCategory(): ICategory {
+    return allCategories[Math.floor(Math.random()*allCategories.length)]
+  }
+
+  function addCategoryToProduct(product: IProduct) {
+    product.categoryId = getRandomCategory().id;
+    return product;
+  }
 
   for (const product of products) {
     await prisma.product.create({
-      data: product,
+      data: addCategoryToProduct(product),
     })
   }
-
 }
 
 main().catch((e) => {
