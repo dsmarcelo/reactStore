@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { GetStaticPaths } from 'next';
 import { ICategory } from '../../interfaces/category';
-import ProductContainer from '../../components/ProductContainer';
+import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
-import Header from '../../components/Header';
+import Header from '../../components/header';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(`https://api.escuelajs.co/api/v1/categories`);

@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import CategoryContainer from '../components/CategoriesContainer';
-import Header from '../components/Header';
+import CategoryContainer from '../components/categoriesContainer';
+import Header from '../components/header';
 import { ICategory } from '../interfaces/category';
 import styles from '../styles/Home.module.css';
 
