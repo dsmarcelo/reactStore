@@ -1,3 +1,4 @@
+import React from 'react';
 import { IProduct } from '../interfaces/productI';
 import styles from '../styles/ProductCard.module.scss';
 import ProductCard from './productCard';
@@ -10,7 +11,7 @@ const ProductContainer: React.FC<IProps> = ({ products }) => {
   return (
     <section className={styles.productCardContainer}>
       {products.map((product: IProduct, i: number) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={i} product={product} />
       ))}
     </section>
   );
