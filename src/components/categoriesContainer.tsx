@@ -2,6 +2,8 @@ import React from 'react';
 import CategoryCard from './categoryCard';
 import { ICategory } from '../interfaces/category';
 import styles from '../styles/Category.module.scss';
+import { fetchProducts } from '../utils/fetchProducts';
+
 
 type IProps = {
   categoryList: ICategory[];

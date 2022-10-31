@@ -6,7 +6,7 @@ export const categories = [
   },
   {
     name: 'Home Appliances',
-    slug: 'home-appliances',
+    slug: 'home_appliances',
     image: ''
   },
   {

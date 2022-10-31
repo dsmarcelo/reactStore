@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage, GetServerSideProps } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
@@ -29,14 +29,15 @@ const Home: React.FC<Props> = ({ categoryList }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const result = await prisma.category.findMany();
 
   const categoryList = result.map((category) => {
     return {
       id: category.id,
       name: category.name,
-      image: category.image,
+      slug: category.slug,
+      image: category.slug,
     }
   })
 

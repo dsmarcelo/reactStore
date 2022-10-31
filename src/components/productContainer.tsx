@@ -4,13 +4,13 @@ import styles from '../styles/ProductCard.module.scss';
 import ProductCard from './productCard';
 
 type IProps = {
-  products: IProduct[];
+  productList: IProduct[];
 };
 
-const ProductContainer: React.FC<IProps> = ({ products }) => {
+const ProductContainer: React.FC<IProps> = ({ productList }) => {
   return (
     <section className={styles.productCardContainer}>
-      {products.map((product: IProduct, i: number) => (
+      {productList.map((product: IProduct, i: number) => (
         <ProductCard key={i} product={product} />
       ))}
     </section>
