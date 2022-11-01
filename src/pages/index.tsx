@@ -4,7 +4,7 @@ import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
 import Header from '../components/header';
 import { ICategory } from '../interfaces/category';
-import { prisma } from '../lib/prisma';
+import { prisma } from '../../lib/prisma';
 import styles from '../styles/Home.module.css';
 
 interface Props {
