@@ -5,7 +5,7 @@ import CategoryContainer from '../components/categoriesContainer';
 import Header from '../components/header';
 import { ICategory } from '../interfaces/category';
 import { prisma } from '../lib/prisma';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 interface Props {
   categoryList: ICategory[];

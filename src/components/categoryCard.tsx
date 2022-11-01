@@ -3,11 +3,6 @@ import Link from 'next/link';
 import React from 'react';
 import { ICategory } from '../interfaces/category';
 import styles from '../styles/Category.module.scss';
-// import imgPlaceholder from '../public/imgPlaceholder.png'
-import clothing from 'src/public/categories/clothing.jpg';
-import home_appliances from 'src/public/categories/home_appliances.jpg';
-import computers from 'src/public/categories/computers.jpg';
-import smartphones from 'src/public/categories/smartphones.jpg';
 
 interface Props {
   category: ICategory;

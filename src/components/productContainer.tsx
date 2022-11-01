@@ -1,6 +1,6 @@
 import React from 'react';
 import { IProduct } from '../interfaces/productI';
-import styles from '../styles/ProductCard.module.scss';
+import styles from '../styles/Product.module.scss';
 import ProductCard from './productCard';
 
 type IProps = {
