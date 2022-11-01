@@ -7,9 +7,10 @@ const prisma = new PrismaClient();
 export type ICategory = {
   id: string;
   name: string;
+  image: string;
 }
 
-interface IProduct{
+interface IProduct {
   name: string;
   price: number;
   description: string;
@@ -29,8 +30,8 @@ async function main() {
 
   const allCategories = await prisma.category.findMany();
 
-  function getRandomCategory(): ICategory {
-    return allCategories[Math.floor(Math.random()*allCategories.length)]
+  function getRandomCategory() {
+    return allCategories[Math.floor(Math.random() * allCategories.length)]
   }
 
   function addCategoryToProduct(product: IProduct) {

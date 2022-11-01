@@ -1,27 +1,31 @@
 import Image from 'next/future/image';
 import React from 'react';
 import { IProduct } from '../interfaces/productI';
-import styles from '../styles/ProductCard.module.scss';
+import styles from '../styles/Product.module.scss';
 
 interface Props {
   product: IProduct;
 }
 
+const getImage = () => {
+  return `/products/${Math.floor(Math.random() * (24) + 1)}.jpg`
+};
+
 const ProductCard: React.FC<Props> = ({ product }) => {
-  const { title, price, images } = product;
+  const { name, price, images } = product;
   return (
     <a href="" className={styles.productCard}>
       <div className={styles.productCard_image_div}>
         <Image
           className={styles.productCard_img}
-          src={images[0]}
+          src={getImage()}
           alt="Product Image"
           sizes='100'
           fill
         />
       </div>
       <div className={styles.productCard_text_div}>
-        <p className={styles.productCard_text_title}>{title}</p>
+        <p className={styles.productCard_text_name}>{name}</p>
         <p
           className={styles.productCard_text_price}
         >{price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>

@@ -38,14 +38,14 @@
 
 .categoryCard_text_div {
   position: absolute;
-  max-width: 80%;
+  width: 80%;
   bottom: 15px;
 }
 
-.categoryCard_text_title {
+.categoryCard_text_name {
   margin: 0;
-  font-size: 1.7rem;
-  font-family: 'Inter';
+  text-align: center;
+  // font-size: 1.7rem;
   color: white;
   padding-top: 2px;
   // background-color: rgba(0, 0, 0, 0.233);

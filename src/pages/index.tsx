@@ -1,8 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
 import Header from '../components/header';
 import { ICategory } from '../interfaces/category';
+import { prisma } from '../lib/prisma';
 import styles from '../styles/Home.module.css';
 
 interface Props {
@@ -28,14 +30,21 @@ const Home: React.FC<Props> = ({ categoryList }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch('https://api.escuelajs.co/api/v1/categories');
-  const allCategories: ICategory[] = await response.json();
-  const categoryList = allCategories.slice(0, 5);
+  const result = await prisma.category.findMany();
+
+  const categoryList = result.map((category) => {
+    return {
+      id: category.id,
+      name: category.name,
+      slug: category.slug,
+      image: category.slug,
+    }
+  })
+
   return {
     props: {
       categoryList,
     },
-    revalidate: 86400,
   };
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import Styles from '../styles/Header.module.scss';
-import Logo from '../public/Logo.png';
+import Logo from '../../public/Logo.png';
 import Image from 'next/future/image';
 import Link from 'next/link';
 
