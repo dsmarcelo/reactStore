@@ -1,12 +1,15 @@
 import Image from 'next/future/image';
 import React from 'react';
 import { IProduct } from '../interfaces/productI';
-import styles from '../styles/ProductCard.module.scss';
-import imgPlaceholder from '../../public/imgPlaceholder.png'
+import styles from '../styles/Product.module.scss';
 
 interface Props {
   product: IProduct;
 }
+
+const getImage = () => {
+  return `/products/${Math.floor(Math.random() * (24) + 1)}.jpg`
+};
 
 const ProductCard: React.FC<Props> = ({ product }) => {
   const { name, price, images } = product;
@@ -15,7 +18,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       <div className={styles.productCard_image_div}>
         <Image
           className={styles.productCard_img}
-          src={images[0] || imgPlaceholder}
+          src={getImage()}
           alt="Product Image"
           sizes='100'
           fill
