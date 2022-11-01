@@ -5,7 +5,7 @@ import { ICategory } from '../../interfaces/category';
 import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
 import Header from '../../components/header';
-import { prisma } from '../../lib/prisma';
+import { prisma } from '../../../lib/prisma';
 import { categories } from '../../../back-end/seed/categories';
 
 export const getStaticPaths: GetStaticPaths = async () => {
