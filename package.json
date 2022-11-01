@@ -10,8 +10,9 @@
     "prestart": "npm install && cd back-end && npm install"
   },
   "dependencies": {
-    "@prisma/client": "^4.4.0",
+    "@prisma/client": "^4.5.0",
     "next": "^12.3.1",
+    "prisma": "^4.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
