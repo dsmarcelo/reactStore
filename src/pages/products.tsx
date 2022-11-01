@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import * as React from 'react';
 import ProductContainer from '../components/productContainer';
 import { IProduct } from '../interfaces/productI';
-import { prisma } from '../../lib/prisma';
+import { prisma } from '../lib/prisma';
 
 type IProp = {
   products: IProduct[];
