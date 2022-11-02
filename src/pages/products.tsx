@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import * as React from 'react';
+import Header from '../components/header';
 import ProductContainer from '../components/productContainer';
 import { IProduct } from '../interfaces/productI';
 import { prisma } from '../lib/prisma';
@@ -11,9 +12,10 @@ type IProp = {
 const Products: React.FC<IProp> = ({ products }) => {
   return (
     <div>
-      <h2>Products Page</h2>
-      {/* <h2>{products[0].title}</h2> */}
-      <ProductContainer productList={products.slice(0, 20)} />
+      <Header />
+      <main>
+        <ProductContainer productList={products.slice(0, 20)} />
+      </main>
     </div>
   );
 };
