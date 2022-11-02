@@ -1,17 +1,19 @@
+@use './abstracts' as *;
+
 .productCard {
   display: flex;
   gap: 1rem;
   padding: 0.6rem;
-  // border: 2px solid rgba(170, 170, 170, 0.185);
   border-radius: 12px;
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  background-color: rgb(255, 255, 255);
   width: 95vw;
   max-width: 400px;
   max-height: 200px;
+  background-color: $bgColorL;
   // height: 150px;
   text-overflow: ellipsis;
   align-items: center;
+  @include changeColorMode;
 }
 
 .productCardContainer {

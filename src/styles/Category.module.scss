@@ -14,7 +14,7 @@
   border: 2px solid rgba(170, 170, 170, 0.185);
   border-radius: 12px;
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  background-color: rgba(255, 255, 255, 0.048);
+  // background-color:black;
   width: 48vw;
   aspect-ratio: 1;
   max-width: 400px;
@@ -27,13 +27,17 @@
   overflow: hidden;
   border-radius: 9px;
   width: 100%;
+  background-color:black;
   height: 100%;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #00000093 100%);
+  // background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #00000093 100%);
+  // z-index: 1;
 }
 
 .categoryCard_img {
   object-fit: cover;
-  z-index: -1;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.978) 70%, #00000000 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.978) 70%, #00000000 100%);
+  // z-index: -1;
 }
 
 .categoryCard_text_div {

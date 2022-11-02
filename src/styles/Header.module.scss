@@ -1,3 +1,5 @@
+@use './abstracts' as *;
+
 $background-color: #e7e7e7;
 $background-color-lighter-2: #a5a5a5;
 $background-color-lighter: #bdbdbd;
@@ -7,7 +9,8 @@ $background-color-lighter: #bdbdbd;
   top: 0;
   width: 100%;
   z-index: 20;
-  background-color: $background-color-lighter;
+  background-color: $bgColorLT;
+  backdrop-filter: blur(10px);
 }
 
 .header_container {
@@ -31,6 +34,7 @@ $background-color-lighter: #bdbdbd;
   height: auto;
   width: 100%;
   max-width: 20vw;
+  // @include invertImageColor;
 }
 
 .header_userImg {
@@ -54,4 +58,8 @@ $background-color-lighter: #bdbdbd;
   &:focus {
     background-color: $background-color-lighter-2;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  $textColor: #f1f1f1;
 }
