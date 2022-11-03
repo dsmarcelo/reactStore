@@ -1,23 +1,81 @@
-.main {
-  margin-top: 4rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@use './abstracts/' as *;
 
 .title {
-  margin: 0;
   margin-bottom: 1.2rem;
   line-height: 1.15;
   font-size: 1.6rem;
+  text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
+.home_shipping_ad {
+  @include flexCenter(column);
+  width: 100%;
+  max-width: 2560px;
+  height: 82px;
+  position: relative;
+  overflow: hidden;
+}
+
+.title_shipping_ad {
+  z-index: 1;
+  color: $primaryColorD;
+  position: relative;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 400;
   font-size: 1.5rem;
+  width: 95%;
+}
+
+.productSaleCard {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+  width: 95vw;
+  max-width: 400px;
+  max-height: 315px;
+  background-color: #c7c7c7;
+  text-overflow: ellipsis;
+  align-items: start;
+  margin-top: 1rem;
+  @include changeColorMode;
+}
+
+.productSale_image_div {
+  // margin-left: 1vw;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  width: 100%;
+  height: 210px;
+}
+
+.productSale_img {
+  object-fit: cover;
+}
+
+.productSale_text {
+  font-size: 1rem;
+  font-family: 'Inter';
+  padding-top: 2px;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+.productSale_text_name_amount {
+  background-color: #C30000;
+  color: $primaryColorD;
+  border-radius: 3px;
+  padding: 0.3rem;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Inter';
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 600px) {

@@ -1,0 +1,9 @@
+@use './abstracts' as *;
+
+.center {
+  // visibility: hidden;
+  @include flexCenter(column);
+  padding-left: max(16px,env(safe-area-inset-left));
+  padding-right: max(16px,env(safe-area-inset-right));
+  margin: 0 auto;
+}
