@@ -1,9 +1,14 @@
+@use './abstracts/' as *;
+
 .categoryCardContainer {
   position: relative;
   display: grid;
   grid-column: 2;
   grid-template-columns: 1fr 1fr;
   gap: 0.3rem;
+  width: 100%;
+  max-width: 800px;
+  // @include flexCenter(column);
 }
 
 .categoryCard {
@@ -14,8 +19,7 @@
   border: 2px solid rgba(170, 170, 170, 0.185);
   border-radius: 12px;
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  // background-color:black;
-  width: 48vw;
+  width: 100%;
   aspect-ratio: 1;
   max-width: 400px;
   text-overflow: ellipsis;
