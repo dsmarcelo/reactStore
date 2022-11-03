@@ -1,4 +1,4 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 import React from 'react';
 import { IProduct } from '../interfaces/productI';
 import styles from '../styles/Product.module.scss';

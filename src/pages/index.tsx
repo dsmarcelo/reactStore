@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Head from 'next/head';
 import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';

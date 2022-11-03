@@ -1,7 +1,5 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 import React from 'react';
-import { IProduct } from '../interfaces/productI';
-import { getServerSideProps } from '../pages/products';
 import styles from '../styles/Home.module.scss';
 
 const getImage = () => {
