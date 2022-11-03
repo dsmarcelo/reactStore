@@ -1,0 +1,27 @@
+$bgColorD: #0f0f0f;
+$bgColorD1: #1a1a1a;
+$bgColorDT: #0f0f0fc0;
+$primaryColorD: #f1f1f1;
+$primaryColorD1: #d6d6d6;
+
+$bgColorL: #ffffff;
+$bgColorL1: #ebebeb;
+$bgColorLT: #ffffffc0;
+$primaryColorL: #0f0f0f;
+$primaryColorL1: #1a1a1a;
+
+// Header
+$background-color: #e7e7e7;
+$background-color-lighter-2: #a5a5a5;
+$background-color-lighter: #bdbdbd;
+
+@media (prefers-color-scheme: dark) {
+  $bgcolor: #0f0f0f;
+  $textColor: #f1f1f1;
+}
+
+@media (prefers-color-scheme: light) {
+  $bgcolor: #f1f1f1;
+  $textColor: #0f0f0f;
+}
+

@@ -1,0 +1,29 @@
+@use './colors' as *;
+
+@mixin invertImageColor {
+  filter: invert(1);
+}
+
+@mixin darkMode {
+  background-color: #0f0f0f !important;
+  color: #f1f1f1 !important;
+}
+
+@mixin lightMode {
+  $background-color: #f1f1f1 !important;
+  $color: #0f0f0f !important;
+}
+
+@mixin changeColorMode {
+  @media (prefers-color-scheme: dark) {
+    .productCard {
+      @include darkMode;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .productCard {
+      @include lightMode;
+    }
+  }
+}
