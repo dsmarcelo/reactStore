@@ -7,7 +7,7 @@ Altere a variável `DATABASE_URL` se necessário.
 _Dentro da pasta raiz_:
 `npm run prestart`
 #### Para iniciar o front-end
-*Dentro da pasta ./front-end/*:
+*Dentro da pasta raiz*:
 `npm run dev`
 ####  Para iniciar o back-end
 *Dentro da pasta ./back-end/*:
