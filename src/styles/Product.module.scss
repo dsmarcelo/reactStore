@@ -1,5 +1,18 @@
 @use './abstracts' as *;
 
+
+.productCardContainer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  // max-width: 800px;
+  /* grid-template-columns: 50vw; */
+  grid-column: 2;
+  /* grid-auto-flow: column; */
+  gap: 0.9rem;
+}
+
 .productCard {
   display: flex;
   gap: 1rem;
@@ -14,17 +27,6 @@
   text-overflow: ellipsis;
   align-items: center;
   @include changeColorMode;
-}
-
-.productCardContainer {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  // max-width: 800px;
-  /* grid-template-columns: 50vw; */
-  grid-column: 2;
-  /* grid-auto-flow: column; */
-  gap: 0.9rem;
 }
 
 .productCard_image_div {
