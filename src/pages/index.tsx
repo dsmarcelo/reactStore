@@ -9,6 +9,7 @@ import { ICategory } from '../interfaces/category';
 import { prisma } from '../lib/prisma';
 import styles from '../styles/Home.module.scss';
 import utils from '../styles/utils.module.scss';
+import HomeProductsContainer from '../components/homeProductsContainer';
 
 interface Props {
   categoryList: ICategory[];
@@ -40,6 +41,7 @@ const Home: React.FC<Props> = ({ categoryList }) => {
         <section className={utils.center}>
           <CategoryContainer categoryList={categoryList} />
           <SaleProductCard />
+          <HomeProductsContainer />
         </section>
       </main>
     </div>

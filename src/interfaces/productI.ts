@@ -1,14 +1,11 @@
 
 interface IProduct{
-  id: number;
+  id: string;
   name: string;
   price: number;
   description: string;
-  category: {
-    id: number;
-    name: string;
-  }
-  images: [string]
+
+  images: string[]
 }
 
 interface IProductList{
@@ -17,4 +14,5 @@ interface IProductList{
 
 export type {
   IProduct,
+  IProductList,
 }
