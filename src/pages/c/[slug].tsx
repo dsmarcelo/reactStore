@@ -2,8 +2,9 @@ import React from 'react';
 import { GetStaticPaths } from 'next';
 import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
-import Header from '../../components/header';
+import HeaderCategory from '../../components/headerCategory';
 import { prisma } from '../../lib/prisma';
+import BackCategoryBar from '../../components/backCategoryBar';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await prisma.category.findMany();
@@ -49,6 +50,7 @@ export const getStaticProps = async (context: { params: { slug: string; }; }) =>
   return {
     props: {
       productList: JSON.parse(JSON.stringify(productList)),
+      categoryName: category.name,
     },
     revalidate: 10000,
   };
@@ -56,14 +58,17 @@ export const getStaticProps = async (context: { params: { slug: string; }; }) =>
 
 interface Props {
   productList: IProduct[];
+  categoryName: string;
 }
 
-const Category: React.FC<Props> = ({ productList }) => {
+const Category: React.FC<Props> = ({ productList, categoryName }) => {
   return (
     <>
-      <Header />
+      <HeaderCategory category={categoryName}/>
       <main>
-        <ProductContainer productList={productList} />
+        <div style={{marginTop: '110px'}} >
+          <ProductContainer productList={productList} />
+        </div>
       </main>
 
     </>
