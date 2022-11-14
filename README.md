@@ -6,8 +6,11 @@ Altere a variável `DATABASE_URL` se necessário.
 ### Para instalar as dependências:
 _Dentro da pasta raiz_:
 `npm run prestart`
+#### Para iniciar o prisma:
+Dentro da pasta raiz:
+`npx prisma generate --schema=./back-end/prisma/schema.prisma`
 #### Para iniciar o front-end
-*Dentro da pasta raiz*:
+*Dentro da pasta raiz:
 `npm run dev`
 ####  Para iniciar o back-end
 *Dentro da pasta ./back-end/*:
