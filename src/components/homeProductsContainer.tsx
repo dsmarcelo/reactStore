@@ -13,14 +13,13 @@ export default function HomeProductsContainer() {
         (res) => res.json());
       if (!products) return console.error('No products found');
       setProductList(products)
-      console.log(productList);
       setLoading(false)
     }
     fetchProducts();
   }, []);
 
   return (
-    loading ? <h1>Loading</h1> :
+    loading ? <h1>Carregando</h1> :
       <section className={styles.productCardContainer}>
         {productList.map((product: IProduct, i: number) => (
           <ProductCard key={i} product={product} />
