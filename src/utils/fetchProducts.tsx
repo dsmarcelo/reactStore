@@ -1,10 +1,12 @@
 import { IProduct } from '../interfaces/productI'
+import { prisma } from '../lib/prisma';
 
 
 async function fetchProducts(): Promise<IProduct[]> {
-  const res = await fetch("https://api.escuelajs.co/api/v1/products");
-  const products: IProduct[] = await res.json();
-  return products.slice(0,20)
+  const res = await prisma.product.findMany({take: 10});
+  if (!res) return []
+  console.log(res)
+  return res;
 }
 
 export {
