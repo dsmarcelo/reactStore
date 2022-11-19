@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prestart": "npm install && cd back-end && npm install && cd .. && npx prisma generate --schema=./back-end/prisma/schema.prisma"
+    "prestart": "npm install && cd back-end && npm install"
   },
   "dependencies": {
     "@prisma/client": "^4.5.0",
