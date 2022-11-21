@@ -10,18 +10,20 @@ import { prisma } from '../lib/prisma';
 import styles from '../styles/Home.module.scss';
 import utils from '../styles/utils.module.scss';
 import HomeProductsContainer from '../components/homeProductsContainer';
+import { IProduct } from '../interfaces/productI';
 
 interface Props {
   categoryList: ICategory[];
+  productList: IProduct[];
 }
 
-const Home: React.FC<Props> = ({ categoryList }) => {
+const Home: React.FC<Props> = ({ categoryList, productList }) => {
   return (
     <div>
       <Head>
         <title>React Store</title>
         <meta name="description" content="A store created with NextJS" />
-        <link rel="icon" href="Logo.ico" />
+        <link style={{aspectRatio: '1'}}rel="icon" href="Logo.ico" />
       </Head>
 
       <Header />
@@ -41,7 +43,7 @@ const Home: React.FC<Props> = ({ categoryList }) => {
         <section className={utils.center}>
           <CategoryContainer categoryList={categoryList} />
           <SaleProductCard />
-          <HomeProductsContainer />
+          <HomeProductsContainer productList={productList} />
         </section>
       </main>
     </div>
@@ -50,6 +52,7 @@ const Home: React.FC<Props> = ({ categoryList }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const result = await prisma.category.findMany();
+  const products = await prisma.product.findMany({take: 5})
 
   const categoryList = result.map((category) => {
     return {
@@ -60,9 +63,18 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   });
 
+  const productList = products.map((product) => {
+    return {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+    };
+  });
+
   return {
     props: {
       categoryList,
+      productList
     },
   };
 };
