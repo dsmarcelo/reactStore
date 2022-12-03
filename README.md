@@ -1,5 +1,8 @@
 ## Projeto FullStack de uma loja virtual feito com [MongoDB](https://www.mongodb.com/) e [Prisma](https://www.prisma.io/) no Backend e [Next.js](https://nextjs.org/) e [Sass](https://sass-lang.com/) no Frontend
 
+### Link do projeto funcionando:
+https://react-store-pi.vercel.app/
+
 ### Para rodar o projeto localmente:
 Renomeie o arquivo ".env.copy" para ".env", que está na pasta ./back-end/
 Altere a variável `DATABASE_URL` para uma versão em cloud do MongoDB se necessário.
