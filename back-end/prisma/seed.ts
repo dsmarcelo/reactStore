@@ -1,5 +1,6 @@
 import { categories } from '../seed/categories';
 import { products } from '../seed/products';
+import { users } from '../seed/users';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -42,6 +43,12 @@ async function main() {
   for (const product of products) {
     await prisma.product.create({
       data: addCategoryToProduct(product),
+    })
+  }
+
+  for (const user of users) {
+    await prisma.user.create({
+      data: user
     })
   }
 }
