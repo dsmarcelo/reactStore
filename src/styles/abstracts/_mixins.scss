@@ -34,3 +34,41 @@
   justify-content: center;
   align-items:  center;
 }
+
+@mixin btnPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  font-weight: 600;
+  height: 55px;
+  padding: 6px;
+  color: $bgColorL;
+  font-size: 26px;
+  background-color: $primaryColor;
+  border: none;
+  border-radius: 8px;
+    &:hover {
+    background-color: $primaryColorDaker;
+    box-shadow: 0px 0px 10px $primaryColor;
+  }
+}
+
+@mixin btnSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  font-weight: 600;
+  height: 55px;
+  padding: 6px;
+  font-size: 26px;
+  border: none;
+  border-radius: 8px;
+  background-color: $lightBlue;
+  color: $primaryColor;
+  &:hover {
+    background-color: $lightBlueDarker;
+    box-shadow: 0px 0px 10px $lightBlueDarker;
+  }
+}

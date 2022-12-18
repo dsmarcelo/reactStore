@@ -7,3 +7,22 @@
   padding-right: max(16px,env(safe-area-inset-right));
   margin: 0 auto;
 }
+
+.text_input {
+  border: 1px solid $borderMuted;
+  border-radius: 6px;
+  width: 200px;
+  height: 30px;
+  padding: 12px;
+  background-color: $bgColor2;
+}
+
+.flex_row {
+  @include flexCenter(row)
+}
+
+.flex_column {
+  @include flexCenter(column)
+}
+
+

@@ -47,7 +47,7 @@ $background-color-lighter: #bdbdbd;
 }
 
 .header_SearchBar {
-  background-color: $bgColorL1;
+  background-color: $bgColor2;
   border: 0;
   padding: 0.5rem;
   height: 36px;
@@ -87,5 +87,5 @@ $background-color-lighter: #bdbdbd;
 }
 
 @media (prefers-color-scheme: dark) {
-  $textColor: #f1f1f1;
+  $textColorPrimary: #f1f1f1;
 }

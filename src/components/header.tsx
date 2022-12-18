@@ -14,7 +14,9 @@ const Header = () => {
         </Link>
 
         <SearchBar />
-        <h4 className={style.header_userImg}>User</h4>
+        <Link href="/login">
+          <h4 className={style.header_userImg}>User</h4>
+        </Link>
       </div>
     </header>
   );
