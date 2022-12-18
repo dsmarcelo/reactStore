@@ -30,14 +30,14 @@
   border: 1px solid $borderDefault;
   @include flexCenter(column);
   padding: 16px;
-  gap: 4px;
+  gap: 15px;
   label {
     display: block;
     font-weight: 600;
     font-size: 22px;
     margin-bottom: 2px;
   }
-  button {
+  button, a {
     width: 95%;
   }
 }
