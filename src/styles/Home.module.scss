@@ -16,9 +16,10 @@
   overflow: hidden;
 }
 
+//TODO change colors to variables and change categories max size
 .title_shipping_ad {
   z-index: 1;
-  color: $textColorPrimary;
+  color: #0f0f0f;
   position: relative;
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);

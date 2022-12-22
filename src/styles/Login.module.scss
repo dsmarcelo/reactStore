@@ -1,5 +1,5 @@
 @use './abstracts/' as *;
-
+// TODO change input to inner shadow
 .logoContainer {
   display: grid;
   position: relative;
@@ -23,14 +23,14 @@
 .loginForm {
   margin: auto;
   width: 350px;
-  max-width: 90vw;
+  max-width: 95vw;
   min-width: 300px;
   border-radius: 12px;
-  background-color: $bgColorL;
+  background-color: $bgColor;
   border: 1px solid $borderDefault;
   @include flexCenter(column);
   padding: 16px;
-  gap: 15px;
+  gap: 7px;
   label {
     display: block;
     font-weight: 600;

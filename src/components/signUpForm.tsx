@@ -8,7 +8,7 @@ export const SignUpForm = () => {
   return (
     <div>
       <Link href="/" className={style.logoContainer}>
-        <Image src={Logo} alt='Logo' className={style.logo_img} />
+        <Image src={Logo} alt='Logo' priority className={style.logo_img} />
       </Link>
       <form className={style.loginForm}>
         <div>
