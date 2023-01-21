@@ -5,6 +5,24 @@ import { IProduct } from '../../interfaces/productI';
 import HeaderCategory from '../../components/headerCategory';
 import { prisma } from '../../lib/prisma';
 import BackCategoryBar from '../../components/backCategoryBar';
+interface Props {
+  productList: IProduct[];
+  categoryName: string;
+}
+// TODO: Better performance
+export default function Category({ productList, categoryName }: Props) {
+  return (
+    <>
+      <HeaderCategory category={categoryName} />
+      <main>
+        <div style={{ marginTop: '110px' }} >
+          <ProductContainer productList={productList} />
+        </div>
+      </main>
+    </>
+  );
+}
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await prisma.category.findMany();
@@ -19,60 +37,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
-export const getStaticProps = async (context: { params: { slug: string; }; }) => {
+export async function getStaticProps(context: { params: { slug: string; }; }) {
   const slug = context.params.slug;
-
-  const category = await prisma.category.findFirst({
-    where: {
-      slug: {
-        equals: slug,
-        mode: 'insensitive',
-      }
-    }
-  });
-
-  if (!category) {
-    return {
-      props: {
-        productList: []
-      }
-    }
-  };
-
-  const productList = await prisma.product.findMany({
-    where: { categoryId: category.id }
-  });
+  const res = await fetch(`http://localhost:3000/api/c/${slug}`)
+  const data = await res.json()
+  const { category, productList } = data
 
   return {
     props: {
       productList: JSON.parse(JSON.stringify(productList)),
       categoryName: category.name,
     },
-    revalidate: 10000,
+    revalidate: 60, // In seconds
   };
 };
-
-interface Props {
-  productList: IProduct[];
-  categoryName: string;
-}
-
-const Category: React.FC<Props> = ({ productList, categoryName }) => {
-  return (
-    <>
-      <HeaderCategory category={categoryName}/>
-      <main>
-        <div style={{marginTop: '110px'}} >
-          <ProductContainer productList={productList} />
-        </div>
-      </main>
-
-    </>
-  );
-}
-
-export default Category;

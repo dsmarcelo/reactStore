@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '../../../lib/prisma';
 
 export default async function handler(
@@ -6,10 +6,10 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { method, query } = req;
-
-  const quantity = query.quantity || 5;
-  const request = { take: +quantity }
-  const products = await prisma.product.findMany(request)
-  res.status(200).json({ products })
-
+  if (method === 'GET') {
+    const quantity = query.quantity || 5;
+    const request = { take: +quantity };
+    const products = await prisma.product.findMany(request);
+    res.status(200).json({ products });
+  }
 }

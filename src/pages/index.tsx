@@ -68,6 +68,7 @@ export const getStaticProps: GetStaticProps = async () => {
       id: product.id,
       name: product.name,
       price: product.price,
+      images: product.images
     };
   });
 
