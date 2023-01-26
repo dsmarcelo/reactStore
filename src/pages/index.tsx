@@ -23,7 +23,7 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
       <Head>
         <title>React Store</title>
         <meta name="description" content="A store created with NextJS" />
-        <link style={{aspectRatio: '1'}}rel="icon" href="Logo.ico" />
+        <link style={{ aspectRatio: '1' }} rel="icon" href="Logo.ico" />
       </Head>
 
       <Header />
@@ -36,6 +36,9 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
             src={'/world.jpg'}
             alt=""
             fill
+            priority
+            quality={40}
+            sizes="100vw"
             style={{ objectFit: 'cover' }}
           />
         </div>
@@ -52,7 +55,7 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const result = await prisma.category.findMany();
-  const products = await prisma.product.findMany({take: 5})
+  const products = await prisma.product.findMany({ take: 5 })
 
   const categoryList = result.map((category) => {
     return {
