@@ -10,10 +10,11 @@
 .home_shipping_ad {
   @include flexCenter(column);
   width: 100%;
-  max-width: 2560px;
-  height: 82px;
+  max-width: 1500px;
+  height: 122px;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .title_shipping_ad {

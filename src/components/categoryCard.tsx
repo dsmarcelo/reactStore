@@ -18,9 +18,12 @@ const CategoryCard: React.FC<Props> = ({ category }) => {
         <div className={styles.categoryCard_image_div}>
           <Image
             className={styles.categoryCard_img}
-            src={ `/categories/${slug}.jpg` || '/imgPlaceholder.png' }
+            src={`/categories/${slug}.jpg` || '/imgPlaceholder.png'}
             alt="Category Image"
-            sizes="100"
+            sizes="(max-width: 768px) 50vw,
+            (max-width: 1200px) 50vw,
+            33vw"
+            quality={40}
             fill
             priority
           />

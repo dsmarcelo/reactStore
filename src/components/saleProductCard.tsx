@@ -15,6 +15,11 @@ const SaleProductCard = () => {
           src={'/products/oled_tv.jpg'}
           alt="Ad Image"
           fill
+          priority
+          sizes="(max-width: 768px) 95vw,
+            (max-width: 1200px) 50vw,
+            33vw"
+          quality={40}
         />
       </div>
       <div className={styles.productSale_text_div}>
