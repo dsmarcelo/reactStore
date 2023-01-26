@@ -4,18 +4,32 @@ import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
 import HeaderCategory from '../../components/headerCategory';
 import { prisma } from '../../lib/prisma';
-import BackCategoryBar from '../../components/backCategoryBar';
+interface Props {
+  productList: IProduct[];
+  categoryName: string;
+}
+
+export default function Category({ productList, categoryName }: Props) {
+  return (
+    <>
+      <HeaderCategory category={categoryName} />
+      <main>
+        <div style={{ marginTop: '110px' }} >
+          <ProductContainer productList={productList} />
+        </div>
+      </main>
+    </>
+  );
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await prisma.category.findMany();
+  const categories = await prisma.category.findMany();
 
-  const paths = data.map((category) => {
-    return {
-      params: {
-        slug: category.slug,
-      },
-    };
-  });
+  const paths = categories.map((category) => ({
+    params: {
+      slug: category.slug,
+    },
+  }));
 
   return {
     paths,
@@ -23,56 +37,29 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (context: { params: { slug: string; }; }) => {
-  const slug = context.params.slug;
+export async function getStaticProps(context: { params: { slug: string } }) {
+  const { slug } = context.params;
 
-  const category = await prisma.category.findFirst({
+  const categoryS = await prisma.category.findFirst({
     where: {
-      slug: {
-        equals: slug,
-        mode: 'insensitive',
-      }
+      slug,
     }
   });
 
-  if (!category) {
-    return {
-      props: {
-        productList: []
-      }
-    }
-  };
+  if (!categoryS) {
+    throw new Error("No category found")
+  }
 
   const productList = await prisma.product.findMany({
-    where: { categoryId: category.id }
+    where: {
+      categoryId: categoryS.id
+    }
   });
 
   return {
     props: {
       productList: JSON.parse(JSON.stringify(productList)),
-      categoryName: category.name,
     },
-    revalidate: 10000,
+    revalidate: 360, // In seconds
   };
 };
-
-interface Props {
-  productList: IProduct[];
-  categoryName: string;
-}
-
-const Category: React.FC<Props> = ({ productList, categoryName }) => {
-  return (
-    <>
-      <HeaderCategory category={categoryName}/>
-      <main>
-        <div style={{marginTop: '110px'}} >
-          <ProductContainer productList={productList} />
-        </div>
-      </main>
-
-    </>
-  );
-}
-
-export default Category;

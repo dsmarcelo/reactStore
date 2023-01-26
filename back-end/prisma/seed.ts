@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export type ICategory = {
+interface ICategory {
   id: string;
   name: string;
   image: string;
@@ -15,7 +15,7 @@ interface IProduct {
   price: number;
   description: string;
   categoryId: string;
-  images: string[]
+  images: string[];
 }
 
 async function main() {

@@ -7,10 +7,6 @@ interface Props {
   product: IProduct;
 }
 
-const getImage = () => {
-  return `/products/${Math.floor(Math.random() * (24) + 1)}.jpg`
-};
-
 const ProductCard: React.FC<Props> = ({ product }) => {
   const { name, price, images } = product;
   return (
@@ -18,7 +14,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       <div className={styles.productCard_image_div}>
         <Image
           className={styles.productCard_img}
-          src={getImage()}
+          src={`/products/${images[0]}.jpg`}
           alt="Product Image"
           sizes='100'
           fill

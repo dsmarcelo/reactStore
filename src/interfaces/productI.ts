@@ -1,18 +1,13 @@
-
-interface IProduct{
+interface IProduct {
   id: string;
   name: string;
   price: number;
   description: string;
-
-  images: string[]
+  images: string[];
 }
 
-interface IProductList{
+interface IProductList {
   IProduct: IProduct[];
 }
 
-export type {
-  IProduct,
-  IProductList,
-}
+export type { IProduct, IProductList };
