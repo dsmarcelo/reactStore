@@ -11,6 +11,7 @@ import styles from '../styles/Home.module.scss';
 import utils from '../styles/utils.module.scss';
 import HomeProductsContainer from '../components/homeProductsContainer';
 import { IProduct } from '../interfaces/productI';
+import HomeCarousel from '../components/homeCarousel';
 
 interface Props {
   categoryList: ICategory[];
@@ -28,7 +29,7 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
 
       <Header />
       <main className={styles.main}>
-        <div className={styles.home_shipping_ad}>
+        {/* <div className={styles.home_shipping_ad}>
           <p className={styles.title_shipping_ad}>
             Enviamos para todo o mundo!
           </p>
@@ -41,7 +42,8 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
             sizes="100vw"
             style={{ objectFit: 'cover' }}
           />
-        </div>
+        </div> */}
+        <HomeCarousel />
         <h1 className={styles.title}>Bem vindo a React Store</h1>
         <section className={utils.center}>
           <CategoryContainer categoryList={categoryList} />

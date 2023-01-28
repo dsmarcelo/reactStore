@@ -28,6 +28,17 @@
   width: 95%;
 }
 
+.carousel_container {
+  width: 100vw;
+  max-width: 1600px;
+  height: 33vw;
+  max-height: 340px;
+}
+
+.carousel_container_img {
+  object-fit: cover;
+}
+
 .productSaleCard {
   display: flex;
   flex-direction: column;
@@ -45,7 +56,6 @@
 }
 
 .productSale_image_div {
-  // margin-left: 1vw;
   position: relative;
   overflow: hidden;
   border-radius: 9px;
