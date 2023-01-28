@@ -28,7 +28,11 @@
   }
 }
 
-@mixin flexCenter($direction) {
+@mixin transition {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@mixin flexCenter($direction: column) {
   display: flex;
   flex-direction: $direction;
   justify-content: center;
