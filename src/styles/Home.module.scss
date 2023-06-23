@@ -30,21 +30,34 @@
 
 .carousel_container {
   width: 100vw;
-  max-width: 1600px;
+  max-width: 2560px;
   height: 33vw;
-  max-height: 340px;
+  max-height: 500px;
+  margin-bottom: 4rem;
+  background-color: black;
+}
+
+.carousel_image_container {
+  max-width: 1600px;
 }
 
 .carousel_container_img {
   object-fit: cover;
 }
 
+.swiper_button_next, .swiper_button_prev {
+  color: white;
+  background-color: #fff;
+  width: 20vw;
+  height: 100%;
+}
+
 .productSaleCard {
+  @include shadow;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
   border-radius: 12px;
-  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
   width: 95vw;
   max-width: 400px;
   max-height: 315px;

@@ -2,9 +2,15 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import style from "../styles/Home.module.scss"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+
+<style jsx>{`
+  .swiper-button-next, .swiper-button-prev {
+    background-color: black;
+  }
+`}</style>
 
 export default function HomeCarousel() {
   const [items, setItems] = useState<string[]>([]);
@@ -22,18 +28,25 @@ export default function HomeCarousel() {
     setItems(fetchImages())
   }, [])
 
+  const NextButton = () => <div>Next</div>;
+  const PrevButton = () => <div>Prev</div>;
+
   return (
     <Swiper
       pagination={{
         clickable: true,
       }}
       autoplay={{
-        delay: 4000,
+        delay: 6000,
         disableOnInteraction: false,
       }}
+      // navigation={{
+      //   nextButton: <NextButton />,
+      //   prevButton: <PrevButton />,
+      // }}
       slidesPerView={"auto"}
       centeredSlides={true}
-      modules={[Autoplay, Pagination]}
+      modules={[Autoplay, Pagination, Navigation]}
       className={style.carousel_container}
     >
       {items.map((image: string, i: number) =>
@@ -50,6 +63,8 @@ export default function HomeCarousel() {
           />
         </SwiperSlide>
       )}
+      <div className="prevButton">adasdasdsaasdasdsdf</div>
     </Swiper >
+
   )
 }

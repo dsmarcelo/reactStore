@@ -24,25 +24,12 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
       <Head>
         <title>React Store</title>
         <meta name="description" content="A store created with NextJS" />
+        <meta name="theme-color" content="#000000" />
         <link style={{ aspectRatio: '1' }} rel="icon" href="Logo.ico" />
       </Head>
 
       <Header />
       <main className={styles.main}>
-        {/* <div className={styles.home_shipping_ad}>
-          <p className={styles.title_shipping_ad}>
-            Enviamos para todo o mundo!
-          </p>
-          <Image
-            src={'/world.jpg'}
-            alt=""
-            fill
-            priority
-            quality={40}
-            sizes="100vw"
-            style={{ objectFit: 'cover' }}
-          />
-        </div> */}
         <HomeCarousel />
         <h1 className={styles.title}>Bem vindo a React Store</h1>
         <section className={utils.center}>
