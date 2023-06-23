@@ -1,27 +1,32 @@
-$bgColorD: #0f0f0f;
-$bgColorD1: #1a1a1a;
-$bgColorDT: #0f0f0fc0;
-$primaryColorD: #f1f1f1;
-$primaryColorD1: #d6d6d6;
 
-$bgColorL: #ffffff;
-$bgColorL1: #ebebeb;
-$bgColorLT: #ffffffc0;
-$primaryColorL: #0f0f0f;
-$primaryColorL1: #1a1a1a;
+$textColorPrimary: #0f0f0f;
+$textColorSecondary: #1a1a1a;
+$textColorWhite: #fcfcfc;
+$bgColor: #ffffff;
+$bgColor2: #f2f2f2;
+$lightBlue: #eaf4ff;
+$lightBlueDarker: #D3DCE6;
+$bgColorT: #ffffffc0;
+$primaryColor: #0094ff;
+$primaryColorDaker: #0099ff;
+$borderDefault: #c7c7c7;
+$borderMuted: #E3E3E3;
+$alert: #FF2727;
+$shadow: 2px 4px 12px rgb(0 0 0 / 8%);
 
 // Header
 $background-color: #e7e7e7;
 $background-color-lighter-2: #a5a5a5;
 $background-color-lighter: #bdbdbd;
 
+
 @media (prefers-color-scheme: dark) {
   $bgcolor: #0f0f0f;
-  $textColor: #f1f1f1;
+  $textColorPrimary: #f1f1f1;
 }
 
 @media (prefers-color-scheme: light) {
   $bgcolor: #f1f1f1;
-  $textColor: #0f0f0f;
+  $textColorPrimary: #0f0f0f;
 }
 

@@ -9,7 +9,7 @@ $background-color-lighter: #bdbdbd;
   top: 0;
   width: 100%;
   z-index: 20;
-  background-color: $bgColorLT;
+  background-color: $bgColorT;
   backdrop-filter: blur(10px);
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
   // height: 96px;
@@ -47,7 +47,7 @@ $background-color-lighter: #bdbdbd;
 }
 
 .header_SearchBar {
-  background-color: $bgColorL1;
+  background-color: $bgColor2;
   border: 0;
   padding: 0.5rem;
   height: 36px;
@@ -61,6 +61,14 @@ $background-color-lighter: #bdbdbd;
   &:focus {
     background-color: $background-color-lighter-2;
   }
+}
+
+.btn_signOut {
+  width: 70px;
+}
+
+.btn_back {
+  box-shadow: none;
 }
 
 .category_top_bar {
@@ -87,5 +95,5 @@ $background-color-lighter: #bdbdbd;
 }
 
 @media (prefers-color-scheme: dark) {
-  $textColor: #f1f1f1;
+  $textColorPrimary: #f1f1f1;
 }
