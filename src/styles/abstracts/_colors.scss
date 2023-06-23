@@ -1,18 +1,25 @@
 
-$textColorPrimary: #0f0f0f;
+$textColor: #0f0f0f;
 $textColorSecondary: #1a1a1a;
 $textColorWhite: #fcfcfc;
 $bgColor: #ffffff;
+$bgColorDark: #0F0F0F;
+$bgColorDark2: #262626;
+$bgColorDarker: #F5F5F5;
 $bgColor2: #f2f2f2;
+$black: #000000;
 $lightBlue: #eaf4ff;
 $lightBlueDarker: #D3DCE6;
 $bgColorT: #ffffffc0;
 $primaryColor: #0094ff;
 $primaryColorDaker: #0099ff;
-$borderDefault: #c7c7c7;
-$borderMuted: #E3E3E3;
+$borderDefault: #D6D6D6;
+$borderMuted: #C7C7C7;
 $alert: #FF2727;
 $shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+$primaryColor: #0094FF;
+$primaryColorLighter: #0094FF;
+$secondartColor: #EAF4FF;
 
 // Header
 $background-color: #e7e7e7;
@@ -22,11 +29,11 @@ $background-color-lighter: #bdbdbd;
 
 @media (prefers-color-scheme: dark) {
   $bgcolor: #0f0f0f;
-  $textColorPrimary: #f1f1f1;
+  $textColor: #f1f1f1;
 }
 
 @media (prefers-color-scheme: light) {
   $bgcolor: #f1f1f1;
-  $textColorPrimary: #0f0f0f;
+  $textColor: #0f0f0f;
 }
 

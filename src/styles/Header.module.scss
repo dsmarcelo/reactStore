@@ -47,19 +47,19 @@ $background-color-lighter: #bdbdbd;
 }
 
 .header_SearchBar {
-  background-color: $bgColor2;
+  background-color: $bgColorDarker;
   border: 0;
   padding: 0.5rem;
   height: 36px;
-  width: 450px;
-  max-width: 50vw;
+  width: 850px;
+  max-width: 80vw;
   border-radius: 12px;
   outline: 0;
   &::placeholder {
     text-align: center;
   }
   &:focus {
-    background-color: $background-color-lighter-2;
+    background-color: $borderDefault;
   }
 }
 
@@ -95,5 +95,5 @@ $background-color-lighter: #bdbdbd;
 }
 
 @media (prefers-color-scheme: dark) {
-  $textColorPrimary: #f1f1f1;
+  $textColor: #f1f1f1;
 }
