@@ -15,14 +15,28 @@ const Header = () => {
         <Link href="/" className={style.header_logo_container}>
           <Image src={Logo} alt="" className={style.header_logo_img} />
         </Link>
-
         <SearchBar />
-        <Link href="/login">
-          <h4 className={style.header_userImg}>{data?.user?.name || "Entrar"}</h4>
+        <Link href="/favorites" className={style.nav_link}>
+          <p className={style.nav_link_text}>Favorites</p>
         </Link>
-        { status === "authenticated" ?
-          <button className={style.btn_signOut} onClick={() => signOut({ callbackUrl: "/login" })}>Sair</button>
-        : null}
+        <Link href="/login" className={style.nav_link}>
+          <p className={style.nav_link_text}>{data?.user?.name || "Sign In"}</p>
+        </Link>
+        {status === "authenticated" ?
+          <button className={style.btn_signOut} onClick={() => signOut({ callbackUrl: "/login" })}>Sign In</button>
+          : null}
+        <Link href="/favorites" className={style.nav_link}>
+          <p className={style.nav_link_text}>My Cart</p>
+        </Link>
+      </div>
+      <div className={style.header_main_nav_container}>
+        <nav className={style.header_main_nav}>
+          <Link href="/c/" className={style.main_nav_link}>Categories</Link>
+          <Link href="/c/" className={style.main_nav_link}>Clothing</Link>
+          <Link href="/c/" className={style.main_nav_link}>Eletronics</Link>
+          <Link href="/c/" className={style.main_nav_link}>Automotive</Link>
+          <Link href="/c/" className={style.main_nav_link}>Home Appliances</Link>
+        </nav>
       </div>
     </header>
   );

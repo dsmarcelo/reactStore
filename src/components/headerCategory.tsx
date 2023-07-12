@@ -17,7 +17,6 @@ const HeaderCategory: React.FC<props> = ({ category }) => {
         <Link href="/" className={style.header_logo_container}>
           <Image src={Logo} alt="" className={style.header_logo_img} />
         </Link>
-
         <SearchBar />
         <h4 className={style.header_userImg}>User</h4>
       </div>

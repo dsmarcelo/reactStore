@@ -1,65 +1,88 @@
 @use './abstracts' as *;
 
-$background-color: #e7e7e7;
-$background-color-lighter-2: #a5a5a5;
-$background-color-lighter: #bdbdbd;
-
 .header {
   position: fixed;
   top: 0;
   width: 100%;
+  padding-left: 5vw;
+  padding-right: 5vw;
   z-index: 20;
   background-color: $bgColorT;
   backdrop-filter: blur(10px);
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  // height: 96px;
+  height: 96px;
 }
 
 .header_container {
   display: flex;
+  margin: auto;
+  width: 100%;
+  max-width: 2560px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: stretch;
   align-items: center;
-  max-width: 1200px;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  gap: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
   height: 48px;
 }
 
 .header_logo_container {
+  display: flex;
+  align-items: center;
   width: 100px;
+  height: 48px;
+  margin-left: 12px;
 }
 
 .header_logo_img {
-  height: auto;
-  width: 100%;
-  max-width: 20vw;
-  // @include invertImageColor;
+  height: 18px;
+  width: auto;
 }
 
-.header_userImg {
-  width: 100px;
-  max-width: 20vw;
+.main_nav_link, .nav_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  height: 48px;
+  min-width: 80px;
+  font-size: 14px;
+  text-align: center;
+  padding: 12px;
+  &:hover {
+    color: $borderMuted;
+    transition: color .05s cubic-bezier(.17,.67,.83,.67);
+  }
+}
+
+.nav_link_text {
+  word-wrap: word;
+}
+
+.nav_search_container {
+  width: 100%;
+  margin-right: 12px;
+  margin-left: 12px;
 }
 
 .header_SearchBar {
   background-color: $bgColorDarker;
-  border: 0;
+  border: 1px solid $borderDefault;
   padding: 0.5rem;
   height: 36px;
-  width: 850px;
-  max-width: 80vw;
+  width: 100%;
   border-radius: 12px;
   outline: 0;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 600;
   &::placeholder {
     text-align: center;
   }
   &:focus {
-    background-color: $borderDefault;
+    border: 1px solid $borderMuted;
+    &::placeholder {
+      visibility: hidden;
+      text-align: center;
+    }
   }
 }
 
@@ -84,14 +107,22 @@ $background-color-lighter: #bdbdbd;
     background: none;
     color: inherit;
     border: none;
-    // padding: 0;
     font: inherit;
     cursor: pointer;
     outline: inherit;
     width: 64px;
     height: 100%;
-    // margin-right: 2rem;
   }
+}
+
+.header_main_nav_container {
+  margin: auto;
+  max-width: 2560px;
+}
+
+.header_main_nav {
+  display: flex;
+  height: 48px;
 }
 
 @media (prefers-color-scheme: dark) {
