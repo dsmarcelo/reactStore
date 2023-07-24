@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
-import Header from '../components/header';
+import Header from '../components/Header/header';
 import SaleProductCard from '../components/saleProductCard';
 import { ICategory } from '../interfaces/category';
 import { prisma } from '../lib/prisma';

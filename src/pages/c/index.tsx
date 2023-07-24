@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import React from 'react'
 import CategoryContainer from '../../components/categoriesContainer'
-import Header from '../../components/header'
+import Header from '../../components/Header/header'
 import { ICategory } from '../../interfaces/category';
 import { prisma } from '../../lib/prisma';
 
@@ -13,7 +13,7 @@ const index: React.FC<Props> = ({ categoryList }) => {
   return (
     <>
       <Header />
-      <CategoryContainer categoryList={ categoryList }/>
+      <CategoryContainer categoryList={categoryList} />
     </>
   )
 }

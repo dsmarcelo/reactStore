@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from './SearchBar';
-import style from '../styles/Header.module.scss';
-import Logo from '../../public/Logo.png';
+import DropdownProfile from './DropdownProfile';
+import style from '../../styles/Header.module.scss';
+import Logo from '../../../public/Logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
@@ -17,16 +18,14 @@ const Header = () => {
         </Link>
         <SearchBar />
         <Link href="/favorites" className={style.nav_link}>
-          <p className={style.nav_link_text}>Favorites</p>
+          <span className={style.nav_link_text}>Favorites</span>
         </Link>
-        <Link href="/login" className={style.nav_link}>
-          <p className={style.nav_link_text}>{data?.user?.name || "Sign In"}</p>
-        </Link>
+        <DropdownProfile data={data} />
         {status === "authenticated" ?
           <button className={style.btn_signOut} onClick={() => signOut({ callbackUrl: "/login" })}>Sign In</button>
           : null}
         <Link href="/favorites" className={style.nav_link}>
-          <p className={style.nav_link_text}>My Cart</p>
+          <span className={style.nav_link_text}>My Cart</span>
         </Link>
       </div>
       <div className={style.header_main_nav_container}>
