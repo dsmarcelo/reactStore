@@ -46,10 +46,10 @@
   // height: 48px;
 }
 
-.nav_arrow_icon {
+.nav_icon {
   // position: absolute;
   top: 8px;
-  margin-left: 6px;
+  margin-left: 4px;
   margin-top: 2px;
 }
 
@@ -167,13 +167,6 @@
   }
 }
 
-.btn_signin, .btn_signup {
-  width: 150px;
-  height: 40px;
-  font-size: 24px;
-  font-weight: 600;
-}
-
 .btn_signin {
   @include btnPrimary;
   background-color: $primaryColorLighter;
@@ -185,4 +178,11 @@
   @include btnSecondary;
   background-color: $secondartColor;
   color: $primaryColorLighter;
+}
+
+.btn_signin, .btn_signup {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
 }
