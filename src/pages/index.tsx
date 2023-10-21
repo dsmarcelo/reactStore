@@ -12,6 +12,7 @@ import utils from '../styles/utils.module.scss';
 import HomeProductsContainer from '../components/homeProductsContainer';
 import { IProduct } from '../interfaces/productI';
 import HomeCarousel from '../components/homeCarousel';
+import rslogo from '../../public/rs-logo.svg'
 
 interface Props {
   categoryList: ICategory[];
@@ -25,7 +26,7 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
         <title>React Store</title>
         <meta name="description" content="A store created with NextJS" />
         <meta name="theme-color" content="#000000" />
-        <link style={{ aspectRatio: '1' }} rel="icon" href="Logo.ico" />
+        <link rel="icon" href="/rs-logo.svg" />
       </Head>
 
       <Header />

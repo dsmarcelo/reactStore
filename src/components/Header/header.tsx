@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from './SearchBar';
 import DropdownProfile from './DropdownProfile';
+import CartButton from './cartButton';
 import style from '../../styles/Header.module.scss';
 import Logo from '../../../public/Logo.png';
 import Image from 'next/image';
@@ -25,9 +26,7 @@ const Header = () => {
           </div>
         </Link>
         <DropdownProfile data={data} status={status} />
-        <Link href="/favorites" className={style.nav_link}>
-          <span className={style.nav_link_text}>My Cart</span>
-        </Link>
+        <CartButton />
       </div>
       <div className={style.header_main_nav_container}>
         <nav className={style.header_main_nav}>

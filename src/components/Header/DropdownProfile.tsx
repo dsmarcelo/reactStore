@@ -13,7 +13,7 @@ interface Props {
 
 const DropdownProfile: React.FC<Props> = ({ data, status }) => {
   return (
-    <div className={style.dropdown}>
+    <div className={style.login_dropdown}>
       {/* {status === "authenticated" ?
         <button className={style.btn_signOut} onClick={() => signOut({ callbackUrl: "/login" })}>Sign In</button>
         : null} */}
@@ -37,4 +37,4 @@ const DropdownProfile: React.FC<Props> = ({ data, status }) => {
   );
 }
 
-export default DropdownProfile; 689768
+export default DropdownProfile;
