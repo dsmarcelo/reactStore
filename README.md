@@ -1,6 +1,6 @@
 ## Projeto FullStack de uma loja virtual feito com [MongoDB](https://www.mongodb.com/) e [Prisma](https://www.prisma.io/) no Backend e [Next.js](https://nextjs.org/) e [Sass](https://sass-lang.com/) no Frontend
 
-### Link do projeto funcionando:
+### Link do site em produção:
 https://react-store-pi.vercel.app/
 
 ### Para rodar o projeto localmente:
