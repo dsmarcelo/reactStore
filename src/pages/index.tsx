@@ -13,6 +13,7 @@ import HomeProductsContainer from '../components/homeProductsContainer';
 import { IProduct } from '../interfaces/productI';
 import HomeCarousel from '../components/homeCarousel';
 import rslogo from '../../public/rs-logo.svg'
+import { fetchProducts } from '../utils/fetchProducts';
 
 interface Props {
   categoryList: ICategory[];
@@ -32,7 +33,6 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
       <Header />
       <main className={styles.main}>
         <HomeCarousel />
-        <h1 className={styles.title}>Bem vindo a React Store</h1>
         <section className={utils.center}>
           <CategoryContainer categoryList={categoryList} />
           <SaleProductCard />
@@ -44,10 +44,10 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const result = await prisma.category.findMany();
-  const products = await prisma.product.findMany({ take: 5 })
+  const categories = await prisma.category.findMany();
+  const products = await fetchProducts()
 
-  const categoryList = result.map((category) => {
+  const categoryList = categories.map((category) => {
     return {
       id: category.id,
       name: category.name,
