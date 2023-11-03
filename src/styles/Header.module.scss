@@ -69,9 +69,11 @@
 }
 
 .nav_search_container {
+  position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
-  margin-right: 12px;
-  margin-left: 12px;
+  height: 36px;
 }
 
 .header_SearchBar {
@@ -84,17 +86,38 @@
   outline: 0;
   font-size: 14px;
   font-family: Inter;
+  margin-right: 12px;
+  margin-left: 12px;
+  transition: 100ms cubic-bezier(0.33, 1, 0.68, 1);
   &::placeholder {
     font-weight: 600;
+    padding-left: -50px !important;
     text-align: center;
   }
   &:focus {
+    padding-right: 36px;
     border: 1px solid $borderMuted;
-    &::placeholder {
-      visibility: hidden;
-      text-align: center;
+    margin-right: 4px;
+    margin-left: 4px;
+    & ~ .serach_btn {
+      margin-right: 4px;
     }
   }
+}
+
+.serach_btn {
+  @include clearButton;
+  position: absolute;
+  right: 0;
+  border-radius: 12px;
+  padding: 8px;
+  height: 100%;
+  margin-right: 12px;
+  background-color: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: 100ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .btn_signOut {
