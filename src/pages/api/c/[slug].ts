@@ -20,7 +20,7 @@ export default async function handler(
         },
       });
       if (!category) {
-        res.status(204).send('No category found');
+        res.status(404).send('Category not found');
       }
       if (category) {
         const productList = await prisma.product.findMany({
