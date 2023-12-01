@@ -3,13 +3,13 @@ import { IProduct, IProductList } from '../interfaces/productI';
 import styles from '../styles/Product.module.scss';
 import ProductCard from './productCard';
 import useSWR from 'swr'
-import { fetchProducts } from '../utils/fetchProducts';
+// import { fetchProducts } from '../utils/fetchProducts';
 
 type IProps = {
   productList: IProduct[];
 }
 
-const HomeProductsContainer: React.FC<IProps> = ({productList}) =>{
+const HomeProductsContainer: React.FC<IProps> = ({ productList }) => {
   // const { data, error } = useSWR('/api/products?quantity=10',
   //   (apiURL: string) => fetch(apiURL).then(res => res.json()))
   // console.log(data)

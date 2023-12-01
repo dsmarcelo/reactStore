@@ -8,12 +8,7 @@ async function fetchProducts(quantity = 10): Promise<IProduct[]> {
 }
 
 async function fetchProductsByCategory(category: string, quantity = 10): Promise<IProduct[]> {
-  const res = await prisma.product.findMany({
-    where: {
-      slug: { equals: category }
-    },
-    take: quantity,
-  });
+  const res =
   if (!res) return []
   return res;
 }
