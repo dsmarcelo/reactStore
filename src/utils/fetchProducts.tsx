@@ -1,16 +1,10 @@
 import { IProduct } from '../interfaces/productI'
-import { prisma } from '../lib/prisma';
+const { BACKEND_URL } = process.env;
 
 async function fetchProducts(quantity = 10): Promise<IProduct[]> {
-  const res = await prisma.product.findMany({ take: quantity });
-  if (!res) return []
-  return res;
-}
-
-async function fetchProductsByCategory(category: string, quantity = 10): Promise<IProduct[]> {
-  const res =
-  if (!res) return []
-  return res;
+  const response = await fetch(`${BACKEND_URL}/api/p/?quantity=${quantity}`);
+  if (!response) return []
+  return response.json();
 }
 
 export {
