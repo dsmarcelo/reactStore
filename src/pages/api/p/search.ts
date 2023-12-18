@@ -31,7 +31,7 @@ export default async function handler(
         res.status(404).json({ message: 'Product not found' });
         res.end();
       }
-      res.status(200).json({ products });
+      res.status(200).json(products);
     } catch (error) {
       res.status(500).json({
         message: 'An error has occurred',

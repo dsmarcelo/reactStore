@@ -10,6 +10,6 @@ export default async function handler(
     const quantity = query.quantity || 5;
     const request = { take: +quantity };
     const category = await prisma.category.findMany(request);
-    res.status(200).json({ category });
+    res.status(200).json(category);
   }
 }

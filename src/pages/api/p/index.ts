@@ -10,6 +10,6 @@ export default async function handler(
     const quantity = query.quantity || 5;
     const request = { take: +quantity };
     const products = await prisma.product.findMany(request);
-    res.status(200).json({ products });
+    res.status(200).json(products);
   }
 }
