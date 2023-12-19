@@ -1,0 +1,53 @@
+@use './abstracts/' as *;
+// TODO change input to inner shadow
+.logoContainer {
+  display: grid;
+  position: relative;
+  margin-top: 10vh;
+  margin-bottom: 20px;
+  place-items: center;
+}
+
+.logo_img {
+  width: 250px;
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.loginForm_Parent {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.loginForm {
+  margin: auto;
+  width: 350px;
+  max-width: 95vw;
+  min-width: 300px;
+  border-radius: 12px;
+  background-color: $bgColor;
+  border: 1px solid $borderDefault;
+  @include flexCenter(column);
+  padding: 16px;
+  gap: 7px;
+  label {
+    display: block;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  button, a {
+    width: 95%;
+  }
+}
+
+.btn_primary {
+  @include btnPrimary;
+}
+
+.btn_secondary {
+  @include btnSecondary;
+  height: 38px;
+  font-size: 20px;
+}

@@ -29,7 +29,21 @@
 }
 
 @mixin transition {
-  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all .3s cubic-bezier(0,0,.5,1);
+}
+
+@mixin shadow {
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+}
+
+@mixin borderDefault {
+  border: 1px solid $borderDefault;
+}
+
+@mixin hover {
+  &:hover {
+    box-shadow: 0px 0px 15px $borderDefault;
+  }
 }
 
 @mixin flexCenter($direction: column) {
@@ -37,4 +51,78 @@
   flex-direction: $direction;
   justify-content: center;
   align-items:  center;
+}
+
+@mixin btnPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  height: 55px;
+  padding: 6px;
+  color: $bgColor;
+  font-size: 26px;
+  background-color: $primaryColor;
+  border: none;
+  border-radius: 8px;
+    &:hover {
+    background-color: $primaryColorDaker;
+    box-shadow: 0px 0px 4px $primaryColor;
+  }
+}
+
+@mixin btnSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  height: 55px;
+  padding: 6px;
+  font-size: 26px;
+  border: none;
+  border-radius: 8px;
+  background-color: $lightBlue;
+  color: $primaryColor;
+  border: 1px solid $borderDefault;
+  &:hover {
+    background-color: $bgColor;
+    box-shadow: 0px 0px 4px $lightBlueDarker;
+  }
+}
+
+@mixin button {
+  border: 1px solid $borderMuted;
+  text-align: center;
+  font-size: 18px;
+  // font-weight: 600;
+  border-radius: 6px;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color,background-color,box-shadow,border-color;
+  margin: 4px;
+  box-shadow: $shadow;
+  cursor: pointer;
+  &:focus {
+    box-shadow: inset $shadow;
+  }
+  &:hover {
+    box-shadow: 0px 0px 15px $borderDefault;
+  }
+  p {
+    margin: 0 auto;
+  }
+}
+
+@mixin clearButton {
+  text-align: center;
+  // font-size: 18px;
+  border-radius: 6px;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color,background-color,box-shadow,border-color;
+  cursor: pointer;
+  &:focus {
+    box-shadow: inset $shadow;
+  }
+  p {
+    margin: 0 auto;
+  }
 }

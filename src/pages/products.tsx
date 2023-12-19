@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import * as React from 'react';
-import Header from '../components/header';
+import Header from '../components/Header/header';
 import ProductContainer from '../components/productContainer';
 import { IProduct } from '../interfaces/productI';
 import { prisma } from '../lib/prisma';

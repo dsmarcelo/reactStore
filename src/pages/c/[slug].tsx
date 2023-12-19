@@ -2,7 +2,7 @@ import React from 'react';
 import { GetStaticPaths } from 'next';
 import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
-import HeaderCategory from '../../components/headerCategory';
+import HeaderCategory from '../../components/Header/headerCategory';
 import { prisma } from '../../lib/prisma';
 interface Props {
   productList: IProduct[];

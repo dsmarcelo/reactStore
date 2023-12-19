@@ -1,19 +1,35 @@
-$bgColorD: #0f0f0f;
-$bgColorD1: #1a1a1a;
-$bgColorDT: #0f0f0fc0;
-$primaryColorD: #f1f1f1;
-$primaryColorD1: #d6d6d6;
 
-$bgColorL: #ffffff;
-$bgColorL1: #ebebeb;
-$bgColorLT: #ffffffc0;
-$primaryColorL: #0f0f0f;
-$primaryColorL1: #1a1a1a;
+$textColor: #0f0f0f;
+$textColorSecondary: #1a1a1a;
+$textColorWhite: #fcfcfc;
+$bgColor: #ffffff;
+$bgColorDark: #0F0F0F;
+$bgColorDark2: #262626;
+$bgColorDarker: #F5F5F7;
+$bgColor2: #f2f2f2;
+$bgColor3: #878787;
+$black: #000000;
+$white: #FFFFFF;
+$lightBlue: #eaf4ff;
+$lightBlueDarker: #D3DCE6;
+$bgColorT: #FFFFFF;
+$primaryColor: #0094ff;
+$primaryColorDaker: #0099ff;
+$primaryColorLighter: #0094FF;
+$borderDefault: #D6D6D6;
+$borderMuted: #C7C7C7;
+$alert: #FF2727;
+$shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+$secondartColor: #EAF4FF;
+$borderDefault: #D6D6D6;
+$hoveredSilver: linear-gradient(90deg, #878787 0%, #A1A1A1 100%);
+
 
 // Header
 $background-color: #e7e7e7;
 $background-color-lighter-2: #a5a5a5;
 $background-color-lighter: #bdbdbd;
+
 
 @media (prefers-color-scheme: dark) {
   $bgcolor: #0f0f0f;
