@@ -3,7 +3,7 @@ import React from 'react'
 import CategoryContainer from '../../components/categoriesContainer'
 import Header from '../../components/Header/header'
 import { ICategory } from '../../interfaces/category';
-import { prisma } from '../../lib/prisma';
+import { getCategories } from '../../utils/category/getCategories';
 
 interface Props {
   categoryList: ICategory[];
@@ -19,7 +19,7 @@ const index: React.FC<Props> = ({ categoryList }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const result = await prisma.category.findMany();
+  const result = await getCategories();
 
   const categoryList = result.map((category) => {
     return {

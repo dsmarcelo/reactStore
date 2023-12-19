@@ -4,6 +4,7 @@ import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
 import HeaderCategory from '../../components/Header/headerCategory';
 import { prisma } from '../../lib/prisma';
+import { getCategories, getCategoryBySlug } from '../../utils/category/getCategories';
 interface Props {
   productList: IProduct[];
   categoryName: string;
@@ -23,7 +24,7 @@ export default function Category({ productList, categoryName }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const categories = await prisma.category.findMany();
+  const categories = await getCategories();
 
   const paths = categories.map((category) => ({
     params: {
@@ -40,19 +41,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export async function getStaticProps(context: { params: { slug: string } }) {
   const { slug } = context.params;
 
-  const categoryS = await prisma.category.findFirst({
-    where: {
-      slug,
-    }
-  });
+  const category = await getCategoryBySlug(slug);
 
-  if (!categoryS) {
+  if (!category) {
     throw new Error("No category found")
   }
 
   const productList = await prisma.product.findMany({
     where: {
-      categoryId: categoryS.id
+      categoryId: category.id
     }
   });
 

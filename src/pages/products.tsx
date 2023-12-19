@@ -3,7 +3,7 @@ import * as React from 'react';
 import Header from '../components/Header/header';
 import ProductContainer from '../components/productContainer';
 import { IProduct } from '../interfaces/productI';
-import { prisma } from '../lib/prisma';
+import { getProducts } from '../utils/product/getProducts';
 
 type IProp = {
   products: IProduct[];
@@ -21,9 +21,7 @@ const Products: React.FC<IProp> = ({ products }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const result = await prisma.product.findMany();
-
-  const products = result.map((product) => {
+  const products = (await getProducts()).map((product) => {
     return {
       id: product.id,
       name: product.name,
