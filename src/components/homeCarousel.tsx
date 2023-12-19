@@ -40,10 +40,6 @@ export default function HomeCarousel() {
         delay: 6000,
         disableOnInteraction: false,
       }}
-      // navigation={{
-      //   nextButton: <NextButton />,
-      //   prevButton: <PrevButton />,
-      // }}
       slidesPerView={"auto"}
       centeredSlides={true}
       modules={[Autoplay, Pagination, Navigation]}
@@ -63,8 +59,7 @@ export default function HomeCarousel() {
           />
         </SwiperSlide>
       )}
-      <div className="prevButton">adasdasdsaasdasdsdf</div>
+      <div className="prevButton"></div>
     </Swiper >
-
   )
 }
