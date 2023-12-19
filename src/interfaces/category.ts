@@ -1,10 +1,8 @@
 interface ICategory {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   image: string;
 }
 
-export type {
-  ICategory,
-}
+export type { ICategory };
