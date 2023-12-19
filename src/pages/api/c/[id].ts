@@ -14,18 +14,18 @@ export default async function handler(
 
   if (method === 'GET') {
     try {
-      const product = await prisma.product.findFirst({
+      const category = await prisma.category.findFirst({
         where: {
           id: id as string,
         },
       });
 
-      if (!product) {
-        res.status(404).json({ message: 'Product not found' });
+      if (!category) {
+        res.status(404).json({ message: 'Category not found' });
         res.end();
       }
 
-      res.status(200).json(product);
+      res.status(200).json(category);
     } catch (error) {
       res.status(500).json({
         message: 'An error occurred',

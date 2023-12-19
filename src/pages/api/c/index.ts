@@ -7,9 +7,36 @@ export default async function handler(
 ) {
   const { method, query } = req;
   if (method === 'GET') {
-    const quantity = query.quantity || 5;
-    const request = { take: +quantity };
-    const category = await prisma.category.findMany(request);
-    res.status(200).json(category);
+    const { slug, name, quantity } = query;
+
+    if (typeof quantity !== 'string' || !query) {
+      res.status(400).json({ message: 'Incorrect query' });
+      res.end();
+    }
+
+    let request = {};
+
+    if (quantity) {
+      request = { take: parseInt(quantity as string) };
+    } else {
+      request = {
+        where: {
+          OR: [
+            slug ? { slug: slug as string } : {},
+            name ? { name: name as string } : {},
+          ],
+        },
+      };
+    }
+
+    try {
+      const category = await prisma.category.findMany(request);
+      res.status(200).json(category);
+    } catch (error) {
+      res.status(500).json({
+        message: 'An error has occurred',
+        error,
+      });
+    }
   }
 }
