@@ -46,14 +46,4 @@ const Header = () => {
   );
 }
 
-//TODO: fetch categories
-export async function getStaticPropsWithContext(context) {
-  const categories = await prisma.category.findMany()
-  return {
-    props: {
-      categories,
-    },
-  }
-}
-
 export default Header;

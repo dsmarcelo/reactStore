@@ -2,14 +2,12 @@ import React from 'react';
 import CategoryCard from './categoryCard';
 import { ICategory } from '../interfaces/category';
 import styles from '../styles/Category.module.scss';
-import { fetchProducts } from '../utils/fetchProducts';
-
 
 type IProps = {
   categoryList: ICategory[];
 }
 
-const CategoryContainer: React.FC<IProps> = ({categoryList}) => {
+const CategoryContainer: React.FC<IProps> = ({ categoryList }) => {
   return (
     <section className={styles.categoryCardContainer}>
       {categoryList.map((category: ICategory) => (

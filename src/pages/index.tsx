@@ -6,14 +6,13 @@ import CategoryContainer from '../components/categoriesContainer';
 import Header from '../components/Header/header';
 import SaleProductCard from '../components/saleProductCard';
 import { ICategory } from '../interfaces/category';
-import { prisma } from '../lib/prisma';
 import styles from '../styles/Home.module.scss';
 import utils from '../styles/utils.module.scss';
 import HomeProductsContainer from '../components/homeProductsContainer';
 import { IProduct } from '../interfaces/productI';
 import HomeCarousel from '../components/homeCarousel';
-import rslogo from '../../public/rs-logo.svg'
-import { fetchProducts } from '../utils/fetchProducts';
+import { getProducts } from '../utils/product/getProducts';
+import { getCategories } from '../utils/category/getCategories';
 
 interface Props {
   categoryList: ICategory[];
@@ -44,25 +43,23 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categories = await prisma.category.findMany();
-  const products = await fetchProducts()
-
-  const categoryList = categories.map((category) => {
+  const categoryList = (await getCategories(4)).map((category) => {
     return {
       id: category.id,
       name: category.name,
       slug: category.slug,
-      image: category.slug,
-    };
+      image: category.image
+    }
   });
 
-  const productList = products.map((product) => {
+  const productList = (await getProducts()).map((product) => {
     return {
       id: product.id,
       name: product.name,
       price: product.price,
+      description: product.description,
       images: product.images
-    };
+    }
   });
 
   return {
