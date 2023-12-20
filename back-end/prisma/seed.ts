@@ -26,36 +26,51 @@ async function main() {
   for (const category of categories) {
     await prisma.category.create({
       data: category,
-    })
+    });
   }
 
   const allCategories = await prisma.category.findMany();
 
   function getRandomCategory() {
-    return allCategories[Math.floor(Math.random() * allCategories.length)]
+    return allCategories[Math.floor(Math.random() * allCategories.length)];
+  }
+
+  function addRandomImages() {
+    const imagesPerProduct = 3;
+    const totalImages = 24;
+    let images = [] as string[];
+
+    for (let i = 1; i <= imagesPerProduct; i++) {
+      const randomIndex = Math.floor(Math.random() * totalImages) + 1;
+      images.push(randomIndex.toString());
+    }
+    return images;
   }
 
   function addCategoryToProduct(product: IProduct) {
     product.categoryId = getRandomCategory().id;
+    product.images = addRandomImages();
     return product;
   }
 
   for (const product of products) {
     await prisma.product.create({
       data: addCategoryToProduct(product),
-    })
+    });
   }
 
   for (const user of users) {
     await prisma.user.create({
-      data: user
-    })
+      data: user,
+    });
   }
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-}).finally(() => {
-  prisma.$disconnect();
-});
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(() => {
+    prisma.$disconnect();
+  });
