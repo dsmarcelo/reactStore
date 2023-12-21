@@ -9,11 +9,18 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 import heart_icon from '../../../public/icons/heart-icon-b.svg'
 import hamburguerMenu from 'public/icons/hamburguerMenuIcon.svg'
+import { ICategory } from '../../interfaces/category';
 
 const Header = () => {
   const { data, status } = useSession()
+  const [categories, setCategories] = useState<ICategory[]>()
 
-  //TODO: Make links to each cat and fetch them
+  useEffect(() => {
+    fetch(`/api/c/?quantity=10`)
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, [])
+
   return (
     <header className={style.header}>
       <div className={style.header_container}>
@@ -36,13 +43,18 @@ const Header = () => {
       <div className={style.header_main_nav_container}>
         <nav className={style.header_main_nav}>
           <Link href="/c/" className={style.main_nav_link}>Categories</Link>
-          <Link href="/c/" className={style.main_nav_link}>Clothing</Link>
-          <Link href="/c/" className={style.main_nav_link}>Eletronics</Link>
-          <Link href="/c/" className={style.main_nav_link}>Automotive</Link>
-          <Link href="/c/" className={style.main_nav_link}>Home Appliances</Link>
+          {categories ?
+            categories.map((category, i) => (
+              <Link
+                key={i}
+                href={`/c/${category.slug}`}
+                className={style.main_nav_link} >
+                {category.name}
+              </Link>
+            )) : null}
         </nav>
       </div>
-    </header>
+    </header >
   );
 }
 
