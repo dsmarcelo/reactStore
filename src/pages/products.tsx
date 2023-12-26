@@ -3,7 +3,7 @@ import * as React from 'react';
 import Header from '../components/Header/header';
 import ProductContainer from '../components/productContainer';
 import { IProduct } from '../interfaces/productI';
-import { getProducts } from '../utils/product/getProducts';
+import { getProducts } from '../lib/product/getProducts';
 
 type IProp = {
   products: IProduct[];

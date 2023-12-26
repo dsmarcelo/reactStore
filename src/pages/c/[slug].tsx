@@ -4,7 +4,7 @@ import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
 import HeaderCategory from '../../components/Header/headerCategory';
 import { prisma } from '../../lib/prisma';
-import { getCategories, getCategoryBySlug } from '../../utils/category/getCategories';
+import { getCategories, getCategoryBySlug } from '../../lib/category/getCategories';
 interface Props {
   productList: IProduct[];
   categoryName: string;

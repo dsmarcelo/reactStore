@@ -11,8 +11,8 @@ import utils from '../styles/utils.module.scss';
 import HomeProductsContainer from '../components/homeProductsContainer';
 import { IProduct } from '../interfaces/productI';
 import HomeCarousel from '../components/homeCarousel';
-import { getProducts } from '../utils/product/getProducts';
-import { getCategories } from '../utils/category/getCategories';
+import { getProducts } from '../lib/product/getProducts';
+import { getCategories } from '../lib/category/getCategories';
 
 interface Props {
   categoryList: ICategory[];
