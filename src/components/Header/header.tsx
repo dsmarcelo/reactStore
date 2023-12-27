@@ -9,17 +9,10 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 import heart_icon from '../../../public/icons/heart-icon-b.svg'
 import hamburguerMenu from 'public/icons/hamburguerMenuIcon.svg'
-import { ICategory } from '../../interfaces/category';
+import HeaderCategoryNav from './headerCategoryNav';
 
 const Header = () => {
   const { data, status } = useSession()
-  const [categories, setCategories] = useState<ICategory[]>()
-
-  useEffect(() => {
-    fetch(`/api/c/?quantity=10`)
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  }, [])
 
   return (
     <header className={style.header}>
@@ -41,18 +34,7 @@ const Header = () => {
         <CartButton />
       </div>
       <div className={style.header_main_nav_container}>
-        <nav className={style.header_main_nav}>
-          <Link href="/c/" className={style.main_nav_link}>Categories</Link>
-          {categories ?
-            categories.map((category, i) => (
-              <Link
-                key={i}
-                href={`/c/${category.slug}`}
-                className={style.main_nav_link} >
-                {category.name}
-              </Link>
-            )) : null}
-        </nav>
+        <HeaderCategoryNav />
       </div>
     </header >
   );
