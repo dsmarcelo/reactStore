@@ -2,6 +2,7 @@ import { SessionProvider } from "next-auth/react"
 import '../styles/globals.scss'
 import "swiper/css/bundle";
 import { AppProps } from 'next/app';
+import { CategoryProvider } from "../lib/contexts/CategoryContext";
 
 function MyApp({
   Component,
@@ -9,7 +10,9 @@ function MyApp({
 }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <CategoryProvider initialCategories={pageProps.initialCategories}>
+        <Component {...pageProps} />
+      </CategoryProvider>
     </SessionProvider>
   )
 }

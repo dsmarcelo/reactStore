@@ -13,6 +13,7 @@ import { IProduct } from '../interfaces/productI';
 import HomeCarousel from '../components/homeCarousel';
 import { getProducts } from '../lib/product/getProducts';
 import { getCategories } from '../lib/category/getCategories';
+import { useCategoryProvider } from '../lib/contexts/CategoryContext';
 
 interface Props {
   categoryList: ICategory[];
@@ -20,6 +21,7 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ categoryList, productList }) => {
+  const { categories } = useCategoryProvider()
   return (
     <div>
       <Head>
@@ -33,7 +35,7 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
       <main className={styles.main}>
         <HomeCarousel />
         <section className={utils.center}>
-          <CategoryContainer categoryList={categoryList} />
+          <CategoryContainer categoryList={categories} />
           <SaleProductCard />
           <HomeProductsContainer productList={productList} />
         </section>
@@ -43,7 +45,7 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categoryList = (await getCategories(4)).map((category) => {
+  const initialCategories = (await getCategories(20)).map((category) => {
     return {
       id: category.id,
       name: category.name,
@@ -64,8 +66,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      categoryList,
-      productList
+      productList,
+      initialCategories
     },
   };
 };
