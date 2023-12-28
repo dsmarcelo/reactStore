@@ -13,7 +13,7 @@ interface Props {
 export default function Category({ productList, categoryName }: Props) {
   return (
     <>
-      <HeaderCategory category={categoryName} />
+      <HeaderCategory categoryName={categoryName} />
       <main>
         <div style={{ marginTop: '110px' }} >
           <ProductContainer productList={productList} />
@@ -56,6 +56,7 @@ export async function getStaticProps(context: { params: { slug: string } }) {
   return {
     props: {
       productList: JSON.parse(JSON.stringify(productList)),
+      categoryName: category.name
     },
     revalidate: 360, // In seconds
   };

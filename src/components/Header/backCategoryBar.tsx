@@ -15,7 +15,7 @@ const BackCategoryBar: React.FC<Props> = ({ name }) => {
       <button className={style.btn_back} type="button" onClick={() => router.back()} >
         <AiOutlineArrowLeft />
       </button>
-      <p>{name}</p>
+      <p className={style.category_name}>{name}</p>
     </div>
   )
 }
