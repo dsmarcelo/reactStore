@@ -3,7 +3,7 @@ import React from 'react'
 import CategoryContainer from '../../components/categoriesContainer'
 import Header from '../../components/Header/header'
 import { ICategory } from '../../interfaces/category';
-import { getCategories } from '../../utils/category/getCategories';
+import { getCategories } from '../../lib/category/getCategories';
 
 interface Props {
   categoryList: ICategory[];

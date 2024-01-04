@@ -58,7 +58,7 @@
   text-align: center;
   padding: 12px;
   white-space: nowrap;
-  &:hover {
+  &:hover, focus {
     filter: opacity(70%);
     transition: opacity .05s cubic-bezier(.17,.67,.83,.67);
   }
@@ -137,18 +137,30 @@
   text-align: center;
   font-weight: 600;
   height: 48px;
-  width: 100vw;
 
   button {
     background: none;
-    color: inherit;
+    color: $textColor;
     border: none;
     font: inherit;
     cursor: pointer;
     outline: inherit;
     width: 64px;
     height: 100%;
+    &:hover {
+      color: $bgColor3;
+    }
+    &:focus {
+      background-color: $bgColorDarker;
+    }
   }
+}
+
+.category_name {
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  color:$bgColorDark2;
 }
 
 .header_main_nav_container {
