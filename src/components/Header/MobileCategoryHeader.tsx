@@ -7,7 +7,7 @@ type props = {
   categoryName: string
 }
 
-const HeaderCategory: React.FC<props> = ({ categoryName }) => {
+const MobileCategoryHeader: React.FC<props> = ({ categoryName }) => {
   return (
     <header className={style.header}>
       <MainHeader />
@@ -16,4 +16,4 @@ const HeaderCategory: React.FC<props> = ({ categoryName }) => {
   );
 }
 
-export default HeaderCategory;
+export default MobileCategoryHeader;

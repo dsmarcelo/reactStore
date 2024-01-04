@@ -2,9 +2,9 @@ import React from 'react';
 import { GetStaticPaths } from 'next';
 import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
-import HeaderCategory from '../../components/Header/headerCategory';
 import { prisma } from '../../lib/prisma';
 import { getCategories, getCategoryBySlug } from '../../lib/category/getCategories';
+import Header from '../../components/Header/header';
 interface Props {
   productList: IProduct[];
   categoryName: string;
@@ -13,7 +13,7 @@ interface Props {
 export default function Category({ productList, categoryName }: Props) {
   return (
     <>
-      <HeaderCategory categoryName={categoryName} />
+      <Header />
       <main>
         <div style={{ marginTop: '110px' }} >
           <ProductContainer productList={productList} />
