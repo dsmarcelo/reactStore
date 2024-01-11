@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import style from "../styles/Home.module.scss"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -33,8 +33,9 @@ export default function HomeCarousel() {
 
   return (
     <Swiper
-      pagination={{
-        clickable: true,
+      scrollbar={{
+        draggable: true,
+        hide: true,
       }}
       autoplay={{
         delay: 6000,

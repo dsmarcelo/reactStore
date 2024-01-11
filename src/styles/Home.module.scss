@@ -1,5 +1,15 @@
 @use './abstracts/' as *;
 
+.main {
+  width: 96%;
+  // padding-right: 16px;
+  // padding-left: 16px;
+  max-width: 1248px;
+  @include flexCenter(column);
+  margin: 0 auto;
+  gap: 24px;
+}
+
 .title {
   margin-bottom: 1.2rem;
   line-height: 1.15;
