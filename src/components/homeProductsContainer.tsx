@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { IProduct, IProductList } from '../interfaces/productI';
 import styles from '../styles/Product.module.scss';
-import ProductCard from './ProductCard';
+import ProductCard from './productCard';
 import useSWR from 'swr'
 // import { fetchProducts } from '../utils/fetchProducts';
 

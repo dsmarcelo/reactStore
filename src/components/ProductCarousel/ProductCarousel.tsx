@@ -1,7 +1,7 @@
 import React from 'react'
 import { IProduct } from '../../interfaces/productI';
 import style from '../../styles/Product.module.scss';
-import ProductCard from '../ProductCard';
+import ProductCard from '../productCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
