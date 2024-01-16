@@ -21,11 +21,11 @@
   align-items: flex-start;
   border-radius: 12px;
   flex-shrink: 0;
-  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
   background-color: $bgColor;
   text-overflow: ellipsis;
   align-items: center;
   @include changeColorMode;
+  @include shadow;
 }
 
 .productCard_image_div {
@@ -67,7 +67,11 @@
 }
 
 .productCarousel {
-  // display: flex;
   @include defaultBorderRadius;
   width: 100%;
+  padding-bottom: 16px !important;
+  margin-bottom: -16px;
+  padding-top: 16px !important;
+  margin-top: -16px;
+  overflow-y: visible !important;
 }
