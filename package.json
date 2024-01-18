@@ -7,16 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prestart": "npm install && cd back-end && npm install"
+    "prestart": "npm install && cd back-end && npm install && prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "^5.7.1",
+    "@prisma/client": "^5.8.1",
     "bcrypt": "^5.1.0",
     "moment": "^2.29.4",
     "next": "^13.0.1",
     "next-auth": "^4.24.5",
     "normalize.css": "^8.0.1",
-    "prisma": "^5.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
@@ -30,6 +29,7 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.1",
     "eslint-config-next": "^13.0.1",
+    "prisma": "^5.8.1",
     "sass": "^1.55.0",
     "typescript": "4.8.3"
   }
