@@ -18,11 +18,10 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
       className={style.productCarousel}
       slidesPerView={5}
       spaceBetween={12}
-      scrollbar={{
-        draggable: true,
-        hide: true,
-      }}
-      freeMode={true}
+      navigation={true}
+      keyboard={true}
+      pagination={true}
+      grabCursor={true}
       breakpoints={{
         0: {
           slidesPerView: 2,
