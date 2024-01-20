@@ -33,11 +33,15 @@
 }
 
 @mixin shadow {
-  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
 }
 
 @mixin borderDefault {
   border: 1px solid $borderDefault;
+}
+
+@mixin defaultBorderRadius {
+  border-radius: 12px;
 }
 
 @mixin hover {

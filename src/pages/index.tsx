@@ -7,20 +7,18 @@ import Header from '../components/Header/header';
 import SaleProductCard from '../components/saleProductCard';
 import { ICategory } from '../interfaces/category';
 import styles from '../styles/Home.module.scss';
-import utils from '../styles/utils.module.scss';
-import HomeProductsContainer from '../components/homeProductsContainer';
 import { IProduct } from '../interfaces/productI';
 import HomeCarousel from '../components/homeCarousel';
 import { getProducts } from '../lib/product/getProducts';
 import { getCategories } from '../lib/category/getCategories';
 import { useCategoryProvider } from '../lib/contexts/CategoryContext';
+import ProductCarousel from '../components/ProductCarousel/ProductCarousel';
 
 interface Props {
-  categoryList: ICategory[];
   productList: IProduct[];
 }
 
-const Home: React.FC<Props> = ({ categoryList, productList }) => {
+const Home: React.FC<Props> = ({ productList }) => {
   const { categories } = useCategoryProvider()
   return (
     <div>
@@ -32,12 +30,12 @@ const Home: React.FC<Props> = ({ categoryList, productList }) => {
       </Head>
 
       <Header />
-      <main className={styles.main}>
+      <main className={''}>
         <HomeCarousel />
-        <section className={utils.center}>
+        <section className={styles.main}>
+          <ProductCarousel productList={productList} />
           <CategoryContainer categoryList={categories} />
           <SaleProductCard />
-          <HomeProductsContainer productList={productList} />
         </section>
       </main>
     </div>
