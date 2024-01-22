@@ -1,11 +1,9 @@
-import type { GetStaticProps, NextPage } from 'next';
-import Image from 'next/image';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
 import Header from '../components/Header/header';
 import SaleProductCard from '../components/saleProductCard';
-import { ICategory } from '../interfaces/category';
 import styles from '../styles/Home.module.scss';
 import { IProduct } from '../interfaces/productI';
 import HomeCarousel from '../components/homeCarousel';
@@ -26,7 +24,7 @@ const Home: React.FC<Props> = ({ productList }) => {
         <title>React Store</title>
         <meta name="description" content="A store created with NextJS" />
         <meta name="theme-color" content="#000000" />
-        <link rel="icon" href="/rs-logo.svg" />
+        <link rel="icon" href="/rs-logo-sm-dark.svg" />
       </Head>
 
       <Header />
