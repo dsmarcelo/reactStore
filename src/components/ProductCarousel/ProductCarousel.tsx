@@ -21,7 +21,6 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
       setInLastSlide(false)
       setCurrentSlide(slider.track.details.rel)
       slider.track.details.progress >= 0.9 && setInLastSlide(true)
-      console.log(slider.track.details.progress)
     },
     created() {
       setLoaded(true)
@@ -45,7 +44,6 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
       spacing: 12,
     },
   })
-  // loaded && instanceRef && console.log(instanceRef.current)
   return (
     <div className={`navigation-wrapper ${style.navigation_wrapper}`}>
       <div ref={sliderRef} className={`keen-slider ${style.productCarousel}`}>

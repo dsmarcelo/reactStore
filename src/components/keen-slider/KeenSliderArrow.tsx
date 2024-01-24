@@ -9,7 +9,6 @@ export const KeenSliderArrow = (props: {
   onClick: (e: any) => void
 }) => {
   const disabled = props.disabled ? `${style.arrow__disabled}` : ""
-  console.log(disabled)
   return (
     <div
       onClick={props.onClick}
