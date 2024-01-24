@@ -1,12 +1,19 @@
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 50px;
   position: absolute;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #fff;
   cursor: pointer;
+}
+
+.arrow__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 
 .arrow__left {
@@ -14,10 +21,10 @@
 }
 
 .arrow__right {
-  left: auto;
+  // left: auto;
   right: 5px;
 }
 
 .arrow__disabled {
-  fill: rgba(255, 255, 255, 0.5);
+  filter: opacity(50%);
 }
