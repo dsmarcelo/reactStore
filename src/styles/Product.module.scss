@@ -69,8 +69,18 @@
 .productCarousel {
   @include defaultBorderRadius;
   width: 100%;
-  padding-bottom: 16px !important;
-  margin-bottom: -16px;
-  padding-top: 16px !important;
-  margin-top: -16px;
+  // background-color: #ff0e0e;
+  // padding: 12px !important;
+  // margin: -24px -24px -24px -24px;
+  // margin-left: -12px;
+  // margin-bottom: -12px;
+  // margin-top: -12px;
+}
+
+.cardWrapper {
+  overflow: visible !important;
+}
+
+.navigation_wrapper {
+  width: 100%;
 }
