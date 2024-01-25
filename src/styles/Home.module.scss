@@ -18,24 +18,24 @@
 }
 
 .carousel_container {
-  max-width: 2560px;
+  margin: auto;
+  max-width: 1440px;
   height: 33vw;
   max-height: 400px;
   margin-bottom: 24px;
 }
 
+.ab {
+  height: 100%;
+}
+
 .carousel_image_container {
+  height: 100%;
   max-width: 1600px;
 }
 
 .carousel_container_img {
   object-fit: cover;
-}
-
-.swiper_button_next, .swiper_button_prev {
-  color: white;
-  background-color: #fff;
-  width: 20vw;
   height: 100%;
 }
 

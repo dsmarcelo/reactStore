@@ -68,9 +68,22 @@
 
 .productCarousel {
   @include defaultBorderRadius;
-  width: 100%;
-  padding-bottom: 16px !important;
-  margin-bottom: -16px;
-  padding-top: 16px !important;
-  margin-top: -16px;
+  // width: 100%;
+  // padding-bottom: 16px !important;
+  // margin-bottom: -16px;
+  // padding-top: 16px !important;
+  // margin-top: -16px;
+  // translate: -50px;
+}
+
+.productCarouselContainer {
+  width: calc(100% + 24px);
+  background-color: red;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.carouselItem {
+  // padding-left: 12px;
+  // padding-right: 12px;
 }

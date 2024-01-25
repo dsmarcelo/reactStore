@@ -1,7 +1,7 @@
 import React from 'react';
 import { IProduct } from '../interfaces/productI';
 import styles from '../styles/Product.module.scss';
-import ProductCard from './productCard';
+import ProductCard from './ProductCard';
 
 type IProps = {
   productList: IProduct[];

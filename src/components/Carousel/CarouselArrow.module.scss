@@ -1,0 +1,36 @@
+@use 'src/styles/abstracts' as *;
+
+.arrow {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  color: rgb(255, 255, 255);
+}
+}
+
+.arrow__icon {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.arrow__left {
+  left: 0;
+}
+
+.arrow__right {
+  right: 0;
+}
+
+.arrow__disabled {
+  filter: opacity(50%);
+}

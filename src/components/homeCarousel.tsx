@@ -1,19 +1,12 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import style from "../styles/Home.module.scss"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import "swiper/css";
-import "swiper/css/pagination";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import CarouselArrow from './Carousel/CarouselArrow';
 
-<style jsx>{`
-  .swiper-button-next, .swiper-button-prev {
-    background-color: black;
-  }
-`}</style>
-
-export default function HomeCarousel() {
-  const [items, setItems] = useState<string[]>([]);
+const HomeCarousel = () => {
+  const [images, setImages] = useState<string[]>([]);
 
   function fetchImages() {
     const imagesQty = 3
@@ -25,29 +18,48 @@ export default function HomeCarousel() {
   }
 
   useEffect(() => {
-    setItems(fetchImages())
+    setImages(fetchImages())
   }, [])
 
-  const NextButton = () => <div>Next</div>;
-  const PrevButton = () => <div>Prev</div>;
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  }
 
   return (
-    <Swiper
-      scrollbar={{
-        draggable: true,
-        hide: true,
-      }}
-      autoplay={{
-        delay: 6000,
-        disableOnInteraction: false,
-      }}
-      slidesPerView={"auto"}
-      centeredSlides={true}
-      modules={[Autoplay, Pagination, Navigation]}
+    <Carousel
       className={style.carousel_container}
+      responsive={responsive}
+      autoPlay
+      autoPlaySpeed={6000}
+      rewind={false}
+      shouldResetAutoplay
+      showDots={false}
+      swipeable
+      infinite
+      arrows
+      keyBoardControl={true}
+      minimumTouchDrag={80}
+      pauseOnHover
+      sliderClass={style.ab}
+      additionalTransfrom={0}
+      customLeftArrow={<CarouselArrow left />}
+      customRightArrow={<CarouselArrow />}
+      renderArrowsWhenDisabled={false}
+      ssr={true}
     >
-      {items.map((image: string, i: number) =>
-        <SwiperSlide
+      {images.map((image: string, i: number) =>
+        <div
           key={i}
           className={style.carousel_image_container}
         >
@@ -55,12 +67,12 @@ export default function HomeCarousel() {
             className={style.carousel_container_img}
             src={image}
             alt={''}
-            sizes='100vw'
             fill
           />
-        </SwiperSlide>
+        </div>
       )}
-      <div className="prevButton"></div>
-    </Swiper >
+    </Carousel >
   )
 }
+
+export default HomeCarousel
