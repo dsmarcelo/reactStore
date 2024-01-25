@@ -66,24 +66,15 @@
   font-weight: 600;
 }
 
-.productCarousel {
+.productCarouselSLICK {
   @include defaultBorderRadius;
-  // width: 100%;
-  // padding-bottom: 16px !important;
-  // margin-bottom: -16px;
-  // padding-top: 16px !important;
-  // margin-top: -16px;
-  // translate: -50px;
 }
 
 .productCarouselContainer {
-  width: calc(100% + 24px);
-  background-color: red;
-  padding-left: 12px;
-  padding-right: 12px;
+  @include defaultBorderRadius;
+  width: 100%;
 }
 
 .carouselItem {
-  // padding-left: 12px;
-  // padding-right: 12px;
+  padding: 6px;
 }
