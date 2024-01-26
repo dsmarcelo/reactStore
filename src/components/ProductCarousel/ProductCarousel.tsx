@@ -24,17 +24,17 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
       console.log(loaded)
     },
     breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 12 },
+      "(min-width: 0px)": {
+        slides: { perView: 2 }
       },
       "(min-width: 560px)": {
-        slides: { perView: 3, spacing: 12 },
+        slides: { perView: 3 }
       },
       "(min-width: 740px)": {
-        slides: { perView: 4, spacing: 12 },
+        slides: { perView: 4 }
       },
       "(min-width: 977px)": {
-        slides: { perView: 5, spacing: 12 },
+        slides: { perView: 5 }
       },
     },
     slides: {
@@ -48,10 +48,12 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
       <div ref={sliderRef} className={`keen-slider ${style.productCarousel}`}>
         {
           productList.map((product, i) => (
-            <div key={i} className={`keen-slider__slide ${style.cardWrapper}`}>
-              <ProductCard key={i}
-                product={product}
-              />
+            <div key={i} className={`keen-slider__slide`}>
+              <div className={style.sliderItem}>
+                <ProductCard key={i}
+                  product={product}
+                />
+              </div>
             </div>
           ))
         }

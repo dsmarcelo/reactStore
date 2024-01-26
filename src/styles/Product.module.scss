@@ -19,13 +19,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  // margin-right: 12px;
+  // margin-right: 12px;
   border-radius: 12px;
   flex-shrink: 0;
   background-color: $bgColor;
   text-overflow: ellipsis;
   align-items: center;
   @include changeColorMode;
-  @include shadow;
+  @include shadowSM;
 }
 
 .productCard_image_div {
@@ -66,21 +68,20 @@
   font-weight: 600;
 }
 
+.navigation_wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .productCarousel {
   @include defaultBorderRadius;
-  width: 100%;
-  // background-color: #ff0e0e;
-  // padding: 12px !important;
-  // margin: -24px -24px -24px -24px;
-  // margin-left: -12px;
-  // margin-bottom: -12px;
-  // margin-top: -12px;
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+  padding-top: 12px;
+  margin-top: -12px;
 }
 
-.cardWrapper {
+.sliderItem {
   overflow: visible !important;
-}
-
-.navigation_wrapper {
-  width: 100%;
+  margin: 12px 6px;
 }
