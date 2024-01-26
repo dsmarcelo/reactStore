@@ -24,8 +24,7 @@
   background-color: $bgColor;
   text-overflow: ellipsis;
   align-items: center;
-  @include changeColorMode;
-  @include shadowSM;
+  @include shadow;
 }
 
 .productCard_image_div {
@@ -73,6 +72,6 @@
 }
 
 .carouselItem {
-  padding: 6px;
+  padding: 10px;
   padding-bottom: 12px;
 }

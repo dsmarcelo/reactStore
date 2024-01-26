@@ -23,19 +23,19 @@ class ProductCarousel extends React.Component<IProps> {
         breakpoint: { max: 977, min: 800 },
         items: 4,
         slidesToSlide: 2,
-        partialVisibilityGutter: 20
+        // partialVisibilityGutter: 12
       },
       mobile: {
         breakpoint: { max: 740, min: 560 },
         items: 3,
         slidesToSlide: 1,
-        partialVisibilityGutter: 12
+        // partialVisibilityGutter: 6
       },
       mobile_sm: {
         breakpoint: { max: 560, min: 0 },
         items: 2,
         slidesToSlide: 1,
-        partialVisibilityGutter: 6
+        partialVisibilityGutter: 12
       }
     };
 
@@ -49,9 +49,10 @@ class ProductCarousel extends React.Component<IProps> {
         customRightArrow={<CarouselArrow />}
         renderArrowsWhenDisabled={false}
         ssr
+        draggable={false}
         containerClass={style.productCarouselContainer}
         itemClass={style.carouselItem}
-        removeArrowOnDeviceType={["tablet", "mobile", "mobile_sm"]}
+        removeArrowOnDeviceType={["mobile", "mobile_sm"]}
         minimumTouchDrag={0}
         beforeChange={() => this.setState({ isMoving: true })}
         afterChange={() => this.setState({ isMoving: false })}
