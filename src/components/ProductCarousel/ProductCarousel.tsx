@@ -13,15 +13,17 @@ type IProps = {
 
 const ProductCarousel: React.FC<IProps> = ({ productList }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [inLastSlide, setInLastSlide] = React.useState(false)
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
+      setInLastSlide(false)
       setCurrentSlide(slider.track.details.rel)
+      slider.track.details.progress >= 0.9 && setInLastSlide(true)
     },
     created() {
       setLoaded(true)
-      console.log(loaded)
     },
     breakpoints: {
       "(min-width: 0px)": {
@@ -42,7 +44,6 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
       spacing: 12,
     },
   })
-
   return (
     <div className={`navigation-wrapper ${style.navigation_wrapper}`}>
       <div ref={sliderRef} className={`keen-slider ${style.productCarousel}`}>
@@ -73,8 +74,7 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
               e.stopPropagation() || instanceRef.current?.next()
             }
             disabled={
-              currentSlide ===
-              instanceRef.current.track.details.slides.length - 1
+              inLastSlide
             }
           />
         </>

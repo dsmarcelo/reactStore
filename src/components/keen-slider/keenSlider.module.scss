@@ -33,6 +33,14 @@
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
 }
 
+.arrow__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
 .arrow__left {
   left: 12px;
 }
