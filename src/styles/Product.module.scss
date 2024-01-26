@@ -25,7 +25,7 @@
   text-overflow: ellipsis;
   align-items: center;
   @include changeColorMode;
-  @include shadow;
+  @include shadowSM;
 }
 
 .productCard_image_div {
@@ -66,15 +66,13 @@
   font-weight: 600;
 }
 
-.productCarouselSLICK {
-  @include defaultBorderRadius;
-}
-
 .productCarouselContainer {
   @include defaultBorderRadius;
   width: 100%;
+  margin-bottom: -12px;
 }
 
 .carouselItem {
   padding: 6px;
+  padding-bottom: 12px;
 }

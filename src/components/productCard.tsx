@@ -16,11 +16,11 @@ const ProductCard: React.FC<Props> = ({ product, isMoving }) => {
   isMoving && console.log('AAAAAA')
   return (
     <Link
-      onClick={(e) => {
-        if (isMoving) {
-          e.preventDefault()
-        }
-      }}
+      // onClick={(e) => {
+      //   if (isMoving) {
+      //     e.preventDefault()
+      //   }
+      // }}
       href=""
       className={styles.productCard} >
       <div className={styles.productCard_image_div}>
