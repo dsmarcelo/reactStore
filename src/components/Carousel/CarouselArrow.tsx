@@ -1,6 +1,6 @@
 import React from 'react'
-import { TbChevronCompactLeft } from "react-icons/tb";
-import { TbChevronCompactRight } from "react-icons/tb";
+import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
 import style from './CarouselArrow.module.scss'
 import { ArrowProps } from 'react-multi-carousel/lib/types';
 interface CustomLeftArrowProps extends ArrowProps {
@@ -15,8 +15,8 @@ const CarouselArrow = ({ onClick, left }: CustomLeftArrowProps) => {
         }`}
     >
       {left ?
-        <TbChevronCompactLeft className={`${style.arrow__icon}`} />
-        : <TbChevronCompactRight className={`${style.arrow__icon}`} />}
+        <FaChevronLeft className={`${style.arrow__icon}`} />
+        : <FaChevronRight className={`${style.arrow__icon}`} />}
     </button>
   )
 }
