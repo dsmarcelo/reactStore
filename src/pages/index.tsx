@@ -28,13 +28,11 @@ const Home: React.FC<Props> = ({ productList }) => {
       </Head>
 
       <Header />
-      <main className={''}>
+      <main className={styles.main}>
         <BannerCarousel />
-        <section className={styles.main}>
-          <ProductCarousel productList={productList} />
-          <CategoryContainer categoryList={categories} />
-          <SaleProductCard />
-        </section>
+        <ProductCarousel productList={productList} />
+        <CategoryContainer categoryList={categories} />
+        <SaleProductCard />
       </main>
     </div>
   );

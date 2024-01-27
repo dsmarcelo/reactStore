@@ -6,7 +6,7 @@
   // padding-left: 16px;
   max-width: 1248px;
   @include flexCenter(column);
-  margin: 0 auto;
+  justify-content: center;
   gap: 24px;
 }
 
