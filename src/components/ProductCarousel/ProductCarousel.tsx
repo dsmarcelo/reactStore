@@ -4,7 +4,6 @@ import style from '../../styles/Product.module.scss';
 import ProductCard from '../productCard';
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
-import '../../styles/Product.module.scss'
 import { KeenSliderArrow } from '../keen-slider/KeenSliderArrow';
 
 type IProps = {
