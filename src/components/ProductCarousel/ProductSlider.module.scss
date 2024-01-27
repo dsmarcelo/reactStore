@@ -1,0 +1,19 @@
+@use '../../styles/abstracts/' as *;
+
+.navigation_wrapper {
+  position: relative;
+  width: calc(100% + 12px);
+}
+
+.carousel {
+  @include defaultBorderRadius;
+  padding-bottom: 12px;
+  margin-bottom: -24px;
+  padding-top: 12px;
+  margin-top: -24px;
+}
+
+.sliderItem {
+  overflow: visible !important;
+  margin: 12px 6px;
+}

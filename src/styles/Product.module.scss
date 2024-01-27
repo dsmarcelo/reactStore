@@ -14,8 +14,7 @@
   display: flex;
   max-width: 240px;
   max-height: 360px;
-  min-width: 170px;
-  min-height: 265px;
+  min-width: 130px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -25,7 +24,7 @@
   text-overflow: ellipsis;
   align-items: center;
   @include changeColorMode;
-  @include shadow;
+  @include shadowSM;
 }
 
 .productCard_image_div {
@@ -66,11 +65,20 @@
   font-weight: 600;
 }
 
+.navigation_wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .productCarousel {
   @include defaultBorderRadius;
-  width: 100%;
-  padding-bottom: 16px !important;
-  margin-bottom: -16px;
-  padding-top: 16px !important;
-  margin-top: -16px;
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+  padding-top: 12px;
+  margin-top: -12px;
+}
+
+.sliderItem {
+  overflow: visible !important;
+  margin: 12px 6px;
 }

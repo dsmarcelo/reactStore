@@ -1,0 +1,65 @@
+@use 'src/styles/abstracts' as *;
+// @use 'keen-slider/keen-slider.min.css' as ks;
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.15s ease-in;
+    &:hover {
+    color: #fff;
+  }
+  &:hover {
+    background-color: rgba(137, 137, 137, 0.628);
+    color: rgb(255, 255, 255);
+  }
+}
+
+.arrow__icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
+}
+
+.arrow__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.arrow__left {
+  left: 12px;
+}
+
+.arrow__right {
+  right: 12px;
+}
+
+.arrow__disabled {
+  visibility: hidden;
+}
+
+.ks.keen-slider {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 740px) {
+  .arrow {
+    opacity: 0;
+  }
+}

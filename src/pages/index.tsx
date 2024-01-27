@@ -6,7 +6,7 @@ import Header from '../components/Header/header';
 import SaleProductCard from '../components/saleProductCard';
 import styles from '../styles/Home.module.scss';
 import { IProduct } from '../interfaces/productI';
-import HomeCarousel from '../components/homeCarousel';
+import BannerCarousel from '../components/BannerCarousel/BannerCarousel';
 import { getProducts } from '../lib/product/getProducts';
 import { getCategories } from '../lib/category/getCategories';
 import { useCategoryProvider } from '../lib/contexts/CategoryContext';
@@ -28,13 +28,11 @@ const Home: React.FC<Props> = ({ productList }) => {
       </Head>
 
       <Header />
-      <main className={''}>
-        <HomeCarousel />
-        <section className={styles.main}>
-          <ProductCarousel productList={productList} />
-          <CategoryContainer categoryList={categories} />
-          <SaleProductCard />
-        </section>
+      <main className={styles.main}>
+        <BannerCarousel />
+        <ProductCarousel productList={productList} />
+        <CategoryContainer categoryList={categories} />
+        <SaleProductCard />
       </main>
     </div>
   );
