@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { IProduct } from '../../interfaces/productI';
-import style from '../../styles/Product.module.scss';
+import style from './ProductSlider.module.scss';
 import ProductCard from '../productCard';
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
@@ -45,7 +45,7 @@ const ProductCarousel: React.FC<IProps> = ({ productList }) => {
   })
   return (
     <div className={`navigation-wrapper ${style.navigation_wrapper}`}>
-      <div ref={sliderRef} className={`keen-slider ${style.productCarousel}`}>
+      <div ref={sliderRef} className={`keen-slider ${style.carousel}`}>
         {
           productList.map((product, i) => (
             <div key={i} className={`keen-slider__slide`}>

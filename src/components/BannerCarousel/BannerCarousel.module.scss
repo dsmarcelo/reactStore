@@ -1,0 +1,15 @@
+@use '../../styles/abstracts/' as *;
+
+.navigation_wrapper {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  max-width: 1440px;
+  height: 33vw;
+  max-height: 400px;
+  margin-bottom: 24px;
+}
+
+.carousel {
+  height: 100%;
+}

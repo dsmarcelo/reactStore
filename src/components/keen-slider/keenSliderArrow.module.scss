@@ -1,4 +1,5 @@
 @use 'src/styles/abstracts' as *;
+// @use 'keen-slider/keen-slider.min.css' as ks;
 
 .arrow {
   position: absolute;
@@ -51,4 +52,14 @@
 
 .arrow__disabled {
   visibility: hidden;
+}
+
+.ks.keen-slider {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 740px) {
+  .arrow {
+    opacity: 0;
+  }
 }

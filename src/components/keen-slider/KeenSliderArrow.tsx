@@ -1,4 +1,4 @@
-import style from './keenSlider.module.scss'
+import style from './keenSliderArrow.module.scss'
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 
