@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import heart_icon from '../../../public/icons/heart-icon-b.svg'
-import hamburguerMenu from 'public/icons/hamburguerMenuIcon.svg'
+import hamburguerMenu from '../../../public/icons/hamburguerMenuIcon.svg'
 
 export default function MainHeader() {
   const { data, status } = useSession();
