@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Header.module.scss'
 import Image from 'next/image'
-import magGlass from 'public/icons/magnifyingGlassIcon.svg'
+import magGlass from '../../../public/icons/magnifyingGlassIcon.svg'
 
 export default function SearchBar() {
   return (
