@@ -1,6 +1,5 @@
 import { SessionProvider } from "next-auth/react"
 import '../styles/globals.scss'
-import "swiper/css/bundle";
 import { AppProps } from 'next/app';
 import { CategoryProvider } from "../lib/contexts/CategoryContext";
 
