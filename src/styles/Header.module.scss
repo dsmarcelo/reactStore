@@ -174,10 +174,6 @@
   overflow-y: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  $textColor: #f1f1f1;
-}
-
 .login_dropdown {
   position: relative;
 
@@ -198,11 +194,20 @@
   }
 }
 
+.dropdown_btn_container {
+  @include flexCenter($gap: 10px)
+}
+
+.user_name {
+  max-width: 100px;
+  text-align: center;
+  font-weight: 600;
+}
+
 .btn_signin {
   @include btnPrimary;
   background-color: $primaryColorLighter;
   color: $textColorWhite;
-  margin-bottom: 12px;
 }
 
 .btn_signup {
