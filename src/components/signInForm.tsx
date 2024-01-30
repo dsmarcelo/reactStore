@@ -54,8 +54,6 @@ export const LoginForm = () => {
     }
   }
 
-
-
   return (
     <div>
       <Link href="/" className={style.logoContainer}>
