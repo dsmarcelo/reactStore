@@ -30,7 +30,7 @@
   border: 1px solid $borderDefault;
   @include flexCenter(column);
   padding: 16px;
-  gap: 7px;
+  gap: 16px;
   label {
     display: block;
     font-weight: 600;
@@ -40,6 +40,14 @@
   button, a {
     width: 95%;
   }
+}
+
+.signIn_container {
+  @include flexCenter($gap: 6px);
+}
+
+.signIn_container {
+  width: 100%
 }
 
 .btn_primary {
