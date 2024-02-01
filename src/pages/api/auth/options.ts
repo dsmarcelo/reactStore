@@ -1,9 +1,14 @@
 import { NextAuthOptions } from 'next-auth';
 import CredentialProvider from 'next-auth/providers/credentials';
 import { prisma } from '../../../lib/prisma';
+import { PrismaAdapter } from '@auth/prisma-adapter';
 import bcryp from 'bcrypt';
 
-export const options: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
+  // adapter: PrismaAdapter(prisma),
+  session: {
+    strategy: 'jwt',
+  },
   providers: [
     CredentialProvider({
       name: 'Credentials',

@@ -11,7 +11,8 @@
     "prestart": "npm install && cd back-end && npm install"
   },
   "dependencies": {
-    "@prisma/client": "^5.8.1",
+    "@auth/prisma-adapter": "^1.2.0",
+    "@prisma/client": "^5.9.0",
     "bcrypt": "^5.1.0",
     "keen-slider": "^6.8.6",
     "moment": "^2.29.4",
@@ -31,7 +32,7 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.1",
     "eslint-config-next": "^13.0.1",
-    "prisma": "^5.8.1",
+    "prisma": "^5.9.0",
     "sass": "^1.55.0",
     "typescript": "4.8.3"
   }
