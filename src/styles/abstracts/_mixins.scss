@@ -54,11 +54,12 @@
   }
 }
 
-@mixin flexCenter($direction: column) {
+@mixin flexCenter($direction: column, $gap: 0px) {
   display: flex;
   flex-direction: $direction;
   justify-content: center;
   align-items:  center;
+  gap: $gap;
 }
 
 @mixin btnPrimary {

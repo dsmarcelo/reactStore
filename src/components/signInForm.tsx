@@ -3,8 +3,7 @@ import style from '../styles/Login.module.scss'
 import Logo from '../../public/Logo.png';
 import Link from 'next/link';
 import Image from 'next/image'
-import { useSession, signIn, getSession } from 'next-auth/react';
-import { useRouter } from 'next/router'
+import { signIn } from 'next-auth/react';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState<string | undefined>('');
@@ -14,10 +13,6 @@ export const LoginForm = () => {
     processing: false
   });
 
-  const router = useRouter();
-
-  const { data: session, status } = useSession()
-
   function simplifyAuthError(error: string) {
     let simplifiedError = ""
 
@@ -25,9 +20,9 @@ export const LoginForm = () => {
       simplifiedError = ""
     }
     if (error === "CredentialsSignin") {
-      simplifiedError = "Email ou senha inválidos";
+      simplifiedError = "Invalid email or password";
     } else {
-      simplifiedError = "Erro no servidor"
+      simplifiedError = "Sorry! There was an error on our side"
     }
     setAuthState({ processing: false, error: simplifiedError })
   }
@@ -36,9 +31,6 @@ export const LoginForm = () => {
     event.preventDefault()
     setAuthState({ processing: true, error: '' })
 
-    if (status === "authenticated") {
-      router.replace('/')
-    }
     if (!password) return null;
 
     const response = await signIn("credentials", {
@@ -53,8 +45,6 @@ export const LoginForm = () => {
       simplifyAuthError(response.error)
     }
   }
-
-
 
   return (
     <div>
@@ -92,9 +82,9 @@ export const LoginForm = () => {
             onChange={e => setPassword(e.target.value)}
           />
         </div>
-        {authState.error !== '' ? <p style={{ "color": "red" }}>Email ou senha inválidos</p> : null}
+        {authState.error !== '' ? <p style={{ "color": "red" }}>Invalid email or password</p> : null}
         <button type='submit' className={style.btn_primary}>
-          {authState.processing ? <p>Carregando...</p> : <p>Entrar</p>}
+          {authState.processing ? <p>Loading...</p> : <p>Entrar</p>}
         </button>
         <Link href='/signup' className={style.btn_secondary}>
           <p>Criar Conta</p>
