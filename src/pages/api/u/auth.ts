@@ -30,7 +30,9 @@ export default async function handler(
     if (user) {
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
-        return res.status(200).json(exclude(user, ['password']));
+        console.log(user);
+        console.log(exclude(user, 'password'));
+        return res.status(200).json(exclude(user, 'password'));
       }
     } else {
       res.status(401).json({ message: 'Incorrect credentials' });
@@ -39,4 +41,11 @@ export default async function handler(
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
   }
+}
+
+function exclude(obj: { [key: string]: string | null }, key: string) {
+  const newObj = { ...obj };
+  delete newObj[key];
+
+  return newObj;
 }
