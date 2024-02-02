@@ -2,8 +2,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '../../../lib/prisma';
 import bcrypt from 'bcrypt';
 
-//TODO: Add image to user and remove password in the res.json
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -25,6 +23,7 @@ export default async function handler(
         name: true,
         email: true,
         password: true,
+        image: true,
       },
     });
     if (user) {
