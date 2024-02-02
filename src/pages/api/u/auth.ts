@@ -29,8 +29,6 @@ export default async function handler(
     if (user) {
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
-        console.log(user);
-        console.log(exclude(user, 'password'));
         return res.status(200).json(exclude(user, 'password'));
       }
     } else {

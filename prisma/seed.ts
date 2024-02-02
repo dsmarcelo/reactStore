@@ -1,6 +1,6 @@
-import { categories } from '../seed/categories';
-import { products } from '../seed/products';
-import { users } from '../seed/users';
+import { categories } from './seed/categories';
+import { products } from './seed/products';
+import { users } from './seed/users';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
