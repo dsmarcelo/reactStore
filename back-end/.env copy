@@ -1,6 +1,0 @@
-# Cloud Server
-# DATABASE_URL=""
-
-# Local Server
-DATABASE_URL="mongodb://localhost:27017/prisma-mongo"
-#?authSource=admin&retryWrites=true&w=majority

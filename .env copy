@@ -1,0 +1,9 @@
+BACKEND_URL="http://localhost:3000/"
+NEXTAUTH_URL="http://localhost:3000/"
+NEXTAUTH_SECRET=""
+
+#Cloud Server:
+DATABASE_URL=""
+
+#Local Server:
+# DATABASE_URL="mongodb://localhost:27017/prisma-mongo"

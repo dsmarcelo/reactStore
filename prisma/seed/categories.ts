@@ -2,21 +2,21 @@ export const categories = [
   {
     name: 'Computers',
     slug: 'computers',
-    image: ''
+    image: '',
   },
   {
     name: 'Home Appliances',
     slug: 'home_appliances',
-    image: ''
+    image: '',
   },
   {
     name: 'Clothing',
     slug: 'clothing',
-    image: ''
+    image: '',
   },
   {
     name: 'Smartphones',
     slug: 'smartphones',
-    image: ''
+    image: '',
   },
-]
+];
