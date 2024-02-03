@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prestart": "npm install && cd back-end && npm install"
+    "lint": "next lint"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed/seed.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.2.0",
@@ -26,13 +28,14 @@
   "devDependencies": {
     "@prisma/nextjs-monorepo-workaround-plugin": "^5.9.0",
     "@types/bcrypt": "^5.0.0",
-    "@types/node": "18.7.18",
+    "@types/node": "^18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.1",
     "eslint-config-next": "^13.0.1",
     "prisma": "^5.9.1",
     "sass": "^1.55.0",
-    "typescript": "4.8.3"
+    "ts-node": "^10.9.2",
+    "typescript": "^4.8.3"
   }
 }

@@ -1,15 +1,7 @@
-import { categories } from './seed/categories';
-import { products } from './seed/products';
-import { users } from './seed/users';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
-
-interface ICategory {
-  id: string;
-  name: string;
-  image: string;
-}
+import { categories } from './categories';
+import { products } from './products';
+import { users } from './users';
+import { prisma } from '../../src/lib/prisma';
 
 interface IProduct {
   name: string;
