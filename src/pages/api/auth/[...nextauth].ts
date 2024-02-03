@@ -19,7 +19,7 @@ export default NextAuth({
       },
       async authorize(credentials) {
         if (!credentials) return null;
-
+        console.log('Sign In...')
         const { email, password } = credentials;
 
         const user = await fetch(`${process.env.NEXTAUTH_URL}/api/u/auth`, {
@@ -31,6 +31,7 @@ export default NextAuth({
         }).then((res) => res.json());
 
         if (user) {
+          console.log(user);
           return user;
         } else {
           return null;
