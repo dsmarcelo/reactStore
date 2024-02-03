@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '../../../lib/prisma';
 import bcrypt from 'bcrypt';
+import * as Sentry from '@sentry/browser';
 
 export default async function handler(
   req: NextApiRequest,
@@ -30,6 +31,7 @@ export default async function handler(
       console.log('user...', user);
       const isMatch = await bcrypt.compare(password, user.password);
       console.log('isMatch - ', isMatch);
+      Sentry.captureMessage('isMatch');
       if (isMatch) {
         res.status(200).json(exclude(user, 'password'));
       } else {
