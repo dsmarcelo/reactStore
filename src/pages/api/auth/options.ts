@@ -27,15 +27,13 @@ export const authOptions: NextAuthOptions = {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ email, password }),
-        })
-          .then((res) => res.json())
-          .catch((err) => {
-            console.error(err);
-            return null;
-          });
-        if (!user) return null;
+        }).then((res) => res.json());
 
-        return user;
+        if (user) {
+          return user;
+        } else {
+          return null;
+        }
       },
     }),
   ],
