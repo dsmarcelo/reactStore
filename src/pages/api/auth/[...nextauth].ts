@@ -23,13 +23,19 @@ export default NextAuth({
         console.log('Sign In...');
         const { email, password } = credentials;
 
-        Sentry.captureMessage('Fetching user');
         const res = await fetch(`${process.env.NEXTAUTH_URL}/api/u/auth`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ email, password }),
+        });
+        Sentry.captureMessage(`nextauth - res ${res}`);
+
+        Sentry.addBreadcrumb({
+          category: 'auth',
+          message: 'Authenticated user ' + res.json(),
+          level: 'info',
         });
         const user = res.json();
         console.log(user);
