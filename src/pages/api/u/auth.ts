@@ -28,10 +28,10 @@ export default async function handler(
       },
     });
     if (user) {
-      console.log('user...', user);
+      Sentry.captureMessage(`User found: ${exclude(user, 'password')}`);
       const isMatch = await bcrypt.compare(password, user.password);
       console.log('isMatch - ', isMatch);
-      Sentry.captureMessage('isMatch');
+      Sentry.captureMessage('Password Correct');
       if (isMatch) {
         res.status(200).json(exclude(user, 'password'));
       } else {
@@ -39,7 +39,7 @@ export default async function handler(
       }
     }
   } catch (error) {
-    console.error(error);
+    Sentry.captureException(error);
     res.status(500).json({ message: 'Internal server error' });
   }
 }
