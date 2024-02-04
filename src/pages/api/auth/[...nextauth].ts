@@ -24,13 +24,15 @@ export default NextAuth({
         const { email, password } = credentials;
 
         Sentry.captureMessage('Fetching user');
-        const user = await fetch(`${process.env.NEXTAUTH_URL}/api/u/auth`, {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/u/auth`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ email, password }),
-        }).then((res) => res.json());
+        });
+        const user = res.json();
+        console.log(user);
 
         if (user) {
           Sentry.captureMessage(`User found in ...nextauth: ${user}`);
