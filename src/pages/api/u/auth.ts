@@ -14,7 +14,7 @@ export default async function handler(
   if (!email || !password) {
     res.status(400).json({ message: 'Missing required fields' });
   }
-  console.log('Fetching user...');
+
   try {
     const user = await prisma.user.findUnique({
       where: { email },
@@ -27,9 +27,8 @@ export default async function handler(
       },
     });
     if (user) {
-      console.log('user...', user);
       const isMatch = await bcrypt.compare(password, user.password);
-      console.log('isMatch - ', isMatch);
+
       if (isMatch) {
         res.status(200).json(exclude(user, 'password'));
       } else {

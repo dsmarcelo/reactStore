@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import CredentialProvider from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import { prisma } from '../../../lib/prisma';
+import fetchData from '../../../lib/fetch';
 
 export default NextAuth({
   // adapter: PrismaAdapter(prisma),
@@ -17,21 +18,19 @@ export default NextAuth({
         },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials) {
+
+      async authorize(credentials, request) {
+        console.log('request', request);
         if (!credentials) return null;
-        console.log('Sign In...')
         const { email, password } = credentials;
 
-        const user = await fetch(`${process.env.NEXTAUTH_URL}/api/u/auth`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email, password }),
-        }).then((res) => res.json());
+        const res = await fetchData('/api/u/auth', 'POST', { email, password });
+
+        if (!res.ok) return null;
+
+        const user = await res.json();
 
         if (user) {
-          console.log(user);
           return user;
         } else {
           return null;
@@ -41,4 +40,12 @@ export default NextAuth({
   ],
   session: { strategy: 'jwt' },
   secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async jwt({ token, user, account, profile, isNewUser }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+  },
 });
