@@ -1,11 +1,11 @@
 import NextAuth from 'next-auth';
 import CredentialProvider from 'next-auth/providers/credentials';
-import { PrismaAdapter } from '@auth/prisma-adapter';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { prisma } from '../../../lib/prisma';
 import fetchData from '../../../lib/fetch';
 
 export default NextAuth({
-  // adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma),
   providers: [
     CredentialProvider({
       name: 'Credentials',
@@ -20,7 +20,6 @@ export default NextAuth({
       },
 
       async authorize(credentials, request) {
-        console.log('request', request);
         if (!credentials) return null;
         const { email, password } = credentials;
 
