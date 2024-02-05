@@ -19,7 +19,7 @@ export default NextAuth({
         password: { label: 'Password', type: 'password' },
       },
 
-      async authorize(credentials, request) {
+      async authorize(credentials) {
         if (!credentials) return null;
         const { email, password } = credentials;
 
@@ -40,7 +40,7 @@ export default NextAuth({
   session: { strategy: 'jwt' },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
-    async jwt({ token, user, account, profile, isNewUser }) {
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
       }
