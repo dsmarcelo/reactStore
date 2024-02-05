@@ -7,18 +7,18 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    res.status(405).json({ message: 'Method not allowed' });
   }
 
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
-    return res.status(400).json({ message: 'Missing required fields' });
+    res.status(400).json({ message: 'Missing required fields' });
   }
 
   const existingUser = await prisma.user.findUnique({ where: { email } });
   if (existingUser) {
-    return res.status(409).json({ message: 'Email already exists' });
+    res.status(409).json({ message: 'Email already exists' });
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);

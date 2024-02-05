@@ -7,12 +7,12 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    res.status(405).json({ message: 'Method not allowed' });
   }
 
   const { email, password } = req.body;
   if (!email || !password) {
-    return res.status(400).json({ message: 'Missing required fields' });
+    res.status(400).json({ message: 'Missing required fields' });
   }
 
   try {
@@ -26,19 +26,18 @@ export default async function handler(
         image: true,
       },
     });
-    if (!user) {
-      return res.status(401).end('Invalid credentials');
-    }
+    if (user) {
+      const isMatch = await bcrypt.compare(password, user.password);
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (isMatch) {
-      return res.status(200).json(exclude(user, 'password'));
-    } else {
-      return res.status(401).end('Invalid credentials');
+      if (isMatch) {
+        res.status(200).json(exclude(user, 'password'));
+      } else {
+        res.status(401).end('Invalid credentials');
+      }
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ message: 'Internal server error' });
   }
 }
 
