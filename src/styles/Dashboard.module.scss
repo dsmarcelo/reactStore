@@ -1,0 +1,38 @@
+@use './abstracts/' as *;
+
+.main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navContainer {
+  display: flex;
+  background-color: $bgColor;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  width: fit-content;
+  height: 100vh;
+}
+
+.menu_item {
+  padding: 12px;
+  width: 200px;
+  border-radius: 12px;
+  font-weight: 500;
+  &:hover {
+    background-color: $hoverLight;
+  }
+  @include transition(.3s);
+}
+
+.active {
+  background-color: $activeLight;
+  padding: 12px;
+  width: 200px;
+  font-weight: 600;
+  color: $textColorBlue;
+  border-radius: 12px;
+  @include transition(.3s);
+}
