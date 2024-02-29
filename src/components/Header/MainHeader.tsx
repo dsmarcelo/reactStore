@@ -13,7 +13,7 @@ import hamburguerMenu from '../../../public/icons/hamburguerMenuIcon.svg'
 export default function MainHeader() {
   const { data, status } = useSession();
   return (
-    <div className={style.header_container}>
+    <div className={style.main_header_container}>
       <Link href="/" className={style.header_logo_container}>
         <Image src={Logo} alt="" className={style.header_logo_img} />
       </Link>

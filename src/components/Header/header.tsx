@@ -6,8 +6,8 @@ import MainHeader from './MainHeader';
 const Header = () => {
   return (
     <header className={style.header}>
-      <MainHeader />
-      <div className={style.header_main_nav_container}>
+      <div className={style.header_container}>
+        <MainHeader />
         <HeaderCategoryNav />
       </div>
     </header >
