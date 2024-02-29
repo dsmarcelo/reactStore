@@ -1,8 +1,8 @@
 import React from 'react'
 import style from '../../styles/Dashboard.module.scss'
-import { MenuItem } from '../../components/dashboard/MenuItem';
+import { MenuItem } from './MenuItem';
 
-export const Sidenav = () => {
+export const Sidebar = () => {
   const links = [
     {
       label: 'Dashboard',

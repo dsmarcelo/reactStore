@@ -1,15 +1,17 @@
 import React from 'react';
 import style from '../../styles/Dashboard.module.scss'
-import { Sidenav } from '../../components/dashboard/Sidenav';
+import { BaseLayout } from 'src/components/dashboard/BaseLayout';
+
+// https://www.youtube.com/watch?v=_ORPWeJFXwQ
 
 function Dashboard() {
-
-  return <div className={style.main}>
-    <Sidenav />
-    <main>
-      React Store Dashboard
-    </main>
-  </div>;
+  return <>
+    <BaseLayout>
+      <main>
+        React Store Dashboard
+      </main>
+    </BaseLayout>
+  </>
 }
 
 export default Dashboard;

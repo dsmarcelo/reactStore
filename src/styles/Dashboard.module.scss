@@ -1,9 +1,13 @@
 @use './abstracts/' as *;
 
-.main {
-  display: flex;
-  width: 100vw;
+.layout {
   height: 100vh;
+}
+
+.content {
+  display: flex;
+  height: 100vh;
+  position: relative;
 }
 
 .navContainer {
@@ -13,7 +17,7 @@
   gap: 6px;
   padding: 12px;
   width: fit-content;
-  height: 100vh;
+  height: 100%;
 }
 
 .menu_item {

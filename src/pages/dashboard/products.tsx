@@ -1,12 +1,11 @@
 import React from 'react'
-import { Sidenav } from '../../components/dashboard/Sidenav';
 import style from '../../styles/Dashboard.module.scss'
+import { BaseLayout } from 'src/components/dashboard/BaseLayout';
 
 export default function categories() {
   return (
-    <div className={style.main}>
-      <Sidenav />
+    <BaseLayout>
       <main>Products</main>
-    </div>
+    </BaseLayout>
   )
 }
