@@ -97,12 +97,9 @@
     color: $bgColor3;
   }
   &:focus {
-    padding-right: 36px;
     border: 1px solid $borderMuted;
-    margin-right: 4px;
-    margin-left: 4px;
     & ~ .serach_btn {
-      margin-right: 4px;
+      display: none;
     }
   }
 }

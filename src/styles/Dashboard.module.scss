@@ -1,0 +1,42 @@
+@use './abstracts/' as *;
+
+.layout {
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.navContainer {
+  display: flex;
+  background-color: $bgColor;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  width: fit-content;
+  height: 100%;
+}
+
+.menu_item {
+  padding: 12px;
+  width: 200px;
+  border-radius: 12px;
+  font-weight: 500;
+  &:hover {
+    background-color: $hoverLight;
+  }
+  @include transition(.3s);
+}
+
+.active {
+  background-color: $activeLight;
+  padding: 12px;
+  width: 200px;
+  font-weight: 600;
+  color: $textColorBlue;
+  border-radius: 12px;
+  @include transition(.3s);
+}
