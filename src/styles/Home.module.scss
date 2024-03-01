@@ -1,75 +1,15 @@
 @use './abstracts/' as *;
 
 .main {
-  width: 96%;
-  // padding-right: 16px;
-  // padding-left: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
   max-width: 1248px;
   @include flexCenter(column);
   justify-content: center;
-  gap: 24px;
-}
-
-.title {
-  margin-bottom: 1.2rem;
-  line-height: 1.15;
-  font-size: 1.6rem;
-  text-align: center;
-}
-
-.productSaleCard {
-  @include shadow;
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  border-radius: 12px;
-  width: 95vw;
-  max-width: 400px;
-  max-height: 315px;
-  background-color: #c7c7c7;
-  text-overflow: ellipsis;
-  align-items: flex-start;
-  margin-top: 1rem;
-  @include changeColorMode;
-}
-
-.productSale_image_div {
-  position: relative;
-  overflow: hidden;
-  border-radius: 9px;
-  width: 100%;
-  height: 210px;
-}
-
-.productSale_img {
-  object-fit: cover;
-}
-
-.productSale_text {
-  font-size: 1rem;
-  font-family: 'Inter';
-  padding-top: 2px;
-  margin: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 0rem;
-}
-
-.productSale_text_name_amount {
-  background-color: #C30000;
-  color: $textColor;
-  border-radius: 3px;
-  padding: 0.3rem;
-  font-weight: 600;
-  font-size: 20px;
-  font-family: 'Inter';
-  margin: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+  gap: 36px;
+  @media (max-width: 600px) {
+    gap: 16px;
+    padding-right: 6px;
+    padding-left: 6px;
   }
 }

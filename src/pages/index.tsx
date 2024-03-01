@@ -3,7 +3,6 @@ import Head from 'next/head';
 import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
 import Header from '../components/Header/header';
-import SaleProductCard from '../components/saleProductCard';
 import styles from '../styles/Home.module.scss';
 import { IProduct } from '../interfaces/productI';
 import BannerCarousel from '../components/BannerCarousel/BannerCarousel';
@@ -11,6 +10,7 @@ import { getProducts } from '../lib/product/getProducts';
 import { getCategories } from '../lib/category/getCategories';
 import { useCategoryProvider } from '../lib/contexts/CategoryContext';
 import ProductCarousel from '../components/ProductCarousel/ProductCarousel';
+import { CategoryAds } from 'src/components/CategoryAds/CategoryAds';
 
 interface Props {
   productList: IProduct[];
@@ -32,7 +32,7 @@ const Home: React.FC<Props> = ({ productList }) => {
         <BannerCarousel />
         <ProductCarousel productList={productList} />
         <CategoryContainer categories={categories} />
-        <SaleProductCard />
+        <CategoryAds />
       </main>
     </div>
   );
