@@ -12,8 +12,9 @@ interface IProduct {
 }
 
 async function main() {
-  await prisma.category.deleteMany();
   await prisma.product.deleteMany();
+  await prisma.category.deleteMany();
+  await prisma.user.deleteMany();
 
   for (const category of categories) {
     await prisma.category.create({
