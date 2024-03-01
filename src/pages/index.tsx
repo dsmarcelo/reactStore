@@ -31,7 +31,7 @@ const Home: React.FC<Props> = ({ productList }) => {
       <main className={styles.main}>
         <BannerCarousel />
         <ProductCarousel productList={productList} />
-        <CategoryContainer categoryList={categories} />
+        <CategoryContainer categories={categories} />
         <SaleProductCard />
       </main>
     </div>
