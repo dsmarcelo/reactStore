@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import style from '@/styles/Sales.module.scss'
+import Link from 'next/link';
 
 const getImage = () => {
   return `/products/${Math.floor(Math.random() * (24) + 1)}.jpg`
@@ -9,13 +10,14 @@ const getImage = () => {
 interface Props {
   image: string,
   title: string,
-  discount_text: string
+  discount_text: string,
+  href: string
 }
 
 const CategoryAdsCard = ({ data }: { data: Props }) => {
-  const { image, title, discount_text } = data
+  const { image, title, discount_text, href } = data
   return (
-    <a href="" className={style.productSaleCard}>
+    <Link href={href} className={style.productSaleCard}>
       <div className={style.productSale_image_div}>
         <Image
           className={style.productSale_img}
@@ -31,7 +33,7 @@ const CategoryAdsCard = ({ data }: { data: Props }) => {
       </div>
       <p className={style.productSale_text_discount}>{discount_text}</p>
       <p className={style.productSale_text}>{title}</p>
-    </a>
+    </Link>
   );
 };
 

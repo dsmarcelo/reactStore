@@ -15,7 +15,7 @@ export default function Category({ productList, categoryName }: Props) {
     <>
       <Header />
       <main>
-        <div style={{ marginTop: '110px' }} >
+        <div>
           <ProductContainer productList={productList} />
         </div>
       </main>
