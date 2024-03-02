@@ -62,6 +62,13 @@
   gap: $gap;
 }
 
+@mixin flexSpaceEvenly($direction: column, $gap: 0px) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items:  center;
+}
+
 @mixin btnPrimary {
   display: flex;
   align-items: center;

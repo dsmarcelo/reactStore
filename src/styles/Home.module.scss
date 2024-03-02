@@ -3,6 +3,8 @@
 .main {
   padding-right: 16px;
   padding-left: 16px;
+  margin-bottom: 36px;
+  margin-top: 36px;
   max-width: 1248px;
   @include flexCenter(column);
   justify-content: center;
