@@ -1,20 +1,19 @@
 @use './abstracts' as *;
 
-
 .productCardContainer {
   display: grid;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1.5rem;
-  grid-column: 2;
-  gap: 0.9rem;
+  gap: 12px;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  @include gridResponsiveColumns;
 }
 
 .productCard {
   display: flex;
-  max-width: 240px;
-  max-height: 360px;
-  min-width: 130px;
+  width: 100%;
+  // max-width: 240px;
+  // max-height: 360px;
+  // min-width: 130px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -23,8 +22,14 @@
   background-color: $bgColor;
   text-overflow: ellipsis;
   align-items: center;
-  @include changeColorMode;
   @include shadowSM;
+  &:hover {
+    outline: 2px solid $borderDefault;
+  }
+  &::active {
+    box-shadow: none;
+    outline: 2px solid $borderDefault;
+  }
 }
 
 .productCard_image_div {

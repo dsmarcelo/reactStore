@@ -13,7 +13,7 @@ interface Props {
 const ProductCard: React.FC<Props> = ({ product }) => {
   const { name, price, images } = product;
   return (
-    <Link href="" className={styles.productCard}>
+    <Link href="/" className={styles.productCard}>
       <div className={styles.productCard_image_div}>
         <Image
           className={styles.productCard_img}
