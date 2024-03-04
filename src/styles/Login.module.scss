@@ -26,8 +26,8 @@
   max-width: 95vw;
   min-width: 300px;
   border-radius: 12px;
-  background-color: $bgColor;
-  border: 1px solid $borderDefault;
+  background-color: $bcLight;
+  border: 1px solid $border;
   @include flexCenter(column);
   padding: 16px;
   gap: 16px;

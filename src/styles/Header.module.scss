@@ -5,7 +5,7 @@
   top: 0;
   width: 100%;
   z-index: 20;
-  background-color: $headerBc;
+  background-color: $transparent-10;
   backdrop-filter: blur(10px);
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
   height: 96px;
@@ -82,8 +82,8 @@
 }
 
 .header_SearchBar {
-  background-color: $bgColorDarker;
-  border: 1px solid $borderDefault;
+  background-color: $transparent-10;
+  border: 1px solid $border;
   padding: 0.5rem;
   height: 36px;
   width: 100%;
@@ -99,7 +99,7 @@
     font-weight: 600;
     padding-left: -50px !important;
     text-align: center;
-    color: $bgColor3;
+    color: $gray-500;
   }
   &:focus {
     border: 1px solid $borderMuted;
@@ -132,7 +132,7 @@
   box-shadow: none;
 }
 
-.category_top_bar {
+.white {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -150,7 +150,7 @@
     width: 64px;
     height: 100%;
     &:hover {
-      color: $bgColor3;
+      color: $gray-500;
     }
     &:focus {
       background-color: $bgColorDarker;
@@ -162,7 +162,7 @@
   width: 100%;
   font-weight: 600;
   text-align: center;
-  color:$bgColorDark2;
+  color:$bcGray;
 }
 
 .header_main_nav_container {
@@ -188,11 +188,11 @@
     position: absolute;
     right: 50%;
     transform: translateX(50%);
-    background-color: $bgColor;
+    background-color: $bcLight;
     padding: 12px;
     border-radius: 12px;
     @include shadow;
-    @include borderDefault;
+    @include border;
   }
 }
 
@@ -214,7 +214,7 @@
 
 .btn_signup {
   @include btnSecondary;
-  background-color: $secondartColor;
+  background-color: $secondary;
   color: $primaryColorLighter;
 }
 

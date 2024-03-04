@@ -9,25 +9,6 @@
   color: #f1f1f1 !important;
 }
 
-@mixin lightMode {
-  $background-color: #f1f1f1 !important;
-  $color: #0f0f0f !important;
-}
-
-@mixin changeColorMode {
-  @media (prefers-color-scheme: dark) {
-    .productCard {
-      @include darkMode;
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    .productCard {
-      @include lightMode;
-    }
-  }
-}
-
 @mixin transition($time: ".3s") {
   transition: all .3s ease-out;
 }
@@ -40,8 +21,8 @@
   box-shadow: 1px 2px 6px 0px rgba(0, 0, 0, 0.08);
 }
 
-@mixin borderDefault {
-  border: 1px solid $borderDefault;
+@mixin border {
+  border: 1px solid $border;
 }
 
 @mixin defaultBorderRadius {
@@ -50,7 +31,8 @@
 
 @mixin hover {
   &:hover {
-    box-shadow: 0px 0px 15px $borderDefault;
+    outline: 2px solid $border;
+    box-shadow: 0px 0px 15px $border;
   }
 }
 
@@ -76,13 +58,13 @@
   font-weight: 600;
   height: 55px;
   padding: 6px;
-  color: $bgColor;
+  color: $bcLight;
   font-size: 26px;
   background-color: $primaryColor;
   border: none;
   border-radius: 8px;
     &:hover {
-    background-color: $primaryColorDaker;
+    background-color: $primaryColorLighter;
     box-shadow: 0px 0px 4px $primaryColor;
   }
 }
@@ -97,12 +79,12 @@
   font-size: 26px;
   border: none;
   border-radius: 8px;
-  background-color: $lightBlue;
+  background-color: $secondary;
   color: $primaryColor;
-  border: 1px solid $borderDefault;
+  border: 1px solid $border;
   &:hover {
-    background-color: $bgColor;
-    box-shadow: 0px 0px 4px $lightBlueDarker;
+    background-color: $bcLight;
+    box-shadow: 0px 0px 4px $secondaryDark;
   }
 }
 
@@ -121,7 +103,7 @@
     box-shadow: inset $shadow;
   }
   &:hover {
-    box-shadow: 0px 0px 15px $borderDefault;
+    box-shadow: 0px 0px 15px $border;
   }
   p {
     margin: 0 auto;

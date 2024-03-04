@@ -11,7 +11,7 @@ interface Props {
 const BackCategoryBar: React.FC<Props> = ({ name }) => {
   const router = useRouter()
   return (
-    <div className={style.category_top_bar}>
+    <div className={style.white}>
       <button className={style.btn_back} type="button" onClick={() => router.back()} >
         <AiOutlineArrowLeft />
       </button>

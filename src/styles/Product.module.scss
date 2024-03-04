@@ -11,24 +11,21 @@
 .productCard {
   display: flex;
   width: 100%;
-  // max-width: 240px;
-  // max-height: 360px;
-  // min-width: 130px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   border-radius: 12px;
   flex-shrink: 0;
-  background-color: $bgColor;
+  background-color: $bcLight;
   text-overflow: ellipsis;
   align-items: center;
   @include shadowSM;
   &:hover {
-    outline: 2px solid $borderDefault;
+    outline: 2px solid $border;
   }
   &::active {
     box-shadow: none;
-    outline: 2px solid $borderDefault;
+    outline: 2px solid $border;
   }
 }
 

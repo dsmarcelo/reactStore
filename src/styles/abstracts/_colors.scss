@@ -1,50 +1,54 @@
-
 $textColor: #0f0f0f;
 $textColorSecondary: #1a1a1a;
 $textColorWhite: #fcfcfc;
-$headerBc: rgba(255, 255, 255, 0.9);
-$bgColor: #ffffff;
-$bgColorDark: #0F0F0F;
-$bgColorDark2: #262626;
+$text-active: #003459;
+
+$bcLight: #ffffff;
+$bgColor: #F2F3F4;
 $bgColorDarker: #F5F5F7;
-$bgColor2: #F2F3F4;
-$bgColor3: #878787;
-$black: #000000;
-$white: #FFFFFF;
-$lightBlue: #eaf4ff;
-$lightBlueDarker: #D3DCE6;
-$bgColorT: #FFFFFF;
+$bcGray: #262626;
+
 $primaryColor: #0094ff;
-$primaryColorDaker: #0099ff;
-$primaryColorLighter: #0094FF;
-$hoverLight: #e6f4ff;
-$activeLight: #b0deff;
+$primaryColorDarker: #0068B3;
+$primaryColorLighter: #37AAFC;
+
+$secondary: #eaf4ff;
+$secondaryDark: #D3DCE6;
+
+$hover: #e6f4ff;
 $hoverNormal: #0085e6;
-$activeNormal: #0076cc;
-$textColorBlue: #003459;
-$borderDefault: #D6D6D6;
+
+$active: #0076cc;
+$activeLight: #b0deff;
+
+$border: #D6D6D6;
 $borderMuted: #C7C7C7;
+
 $alert: #FF2727;
 $redSale: #C30000;
+
 $shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-$secondartColor: #EAF4FF;
-$borderDefault: #D6D6D6;
-$hoveredSilver: linear-gradient(90deg, #878787 0%, #A1A1A1 100%);
+$shadowAlt: 2px 4px 12px rgb(0 0 0 / 16%);
 
+$transparent-10: rgba(255, 255, 255, 0.9);
+$transparent-20: rgba(255, 255, 255, 0.8);
+$transparent-30: rgba(255, 255, 255, 0.7);
 
-// Header
-$background-color: #e7e7e7;
-$background-color-lighter-2: #a5a5a5;
-$background-color-lighter: #bdbdbd;
-
+// Neutral Colors
+$black: #000;
+$white: #fff;
+$gray-100: #f5f5f5;
+$gray-200: #e0e0e0;
+$gray-300: #ccc;
+$gray-400: #999;
+$gray-500: #666;
+$gray-600: #333;
+$gray-700: #222;
+$gray-800: #1a1a1a;
+$gray-900: #0f0f0f;
 
 @media (prefers-color-scheme: dark) {
-  $bgcolor: #0f0f0f;
+  $bgColor: #0f0f0f;
+  $bcLight: #252525;
   $textColor: #f1f1f1;
 }
-
-@media (prefers-color-scheme: light) {
-  $bgcolor: #f1f1f1;
-  $textColor: #0f0f0f;
-}
-
