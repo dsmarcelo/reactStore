@@ -11,6 +11,7 @@ import { getCategories } from '../lib/category/getCategories';
 import { useCategoryProvider } from '../lib/contexts/CategoryContext';
 import ProductCarousel from '../components/ProductCarousel/ProductCarousel';
 import { CategoryAds } from 'src/components/CategoryAds/CategoryAds';
+import { MainLayout } from 'src/components/MainLayout';
 
 interface Props {
   productList: IProduct[];
@@ -27,13 +28,12 @@ const Home: React.FC<Props> = ({ productList }) => {
         <link rel="icon" href="/rs-logo-sm-dark.svg" />
       </Head>
 
-      <Header />
-      <main className={styles.main}>
+      <MainLayout>
         <BannerCarousel />
         <ProductCarousel productList={productList} />
         <CategoryContainer categories={categories} />
         <CategoryAds />
-      </main>
+      </MainLayout>
     </div>
   );
 };
