@@ -19,24 +19,19 @@
   background-color: $bcLight;
   text-overflow: ellipsis;
   align-items: center;
+  overflow: hidden;
   @include shadowSM;
+  @include border;
   &:hover {
-    outline: 2px solid $border;
-  }
-  &::active {
-    box-shadow: none;
-    outline: 2px solid $border;
+    @include hover;
   }
 }
 
 .productCard_image_div {
   position: relative;
   overflow: hidden;
-  border-radius: 12px 12px 0px 0px;
-  border-bottom: 1px solid rgba(214, 214, 214, 0.25);
   width: 100%;
   aspect-ratio: 1;
-  flex-shrink: 0;
 }
 
 .productCard_img {
@@ -57,7 +52,6 @@
 .productCard_text_name {
   height: 28px;
   font-size: 14px;
-  font-family: 'Inter';
   text-overflow: ellipsis;
 }
 
@@ -81,6 +75,5 @@
 }
 
 .sliderItem {
-  overflow: visible !important;
   margin: 12px 6px;
 }
