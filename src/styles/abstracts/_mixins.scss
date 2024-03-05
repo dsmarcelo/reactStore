@@ -9,8 +9,8 @@
   color: #f1f1f1 !important;
 }
 
-@mixin transition($time: ".3s") {
-  transition: all .3s ease-out;
+@mixin transition($time: 0.2s) {
+  transition: all $time ease-in-out;
 }
 
 @mixin shadow {
