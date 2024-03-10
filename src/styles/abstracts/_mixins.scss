@@ -124,6 +124,11 @@
   }
 }
 
+@mixin backgroundBlur {
+  background-color: $transparent-10;
+  backdrop-filter: blur(20px);
+}
+
 @mixin gridResponsiveColumns {
   @media (max-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);
