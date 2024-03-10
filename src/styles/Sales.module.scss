@@ -1,0 +1,49 @@
+@use './abstracts' as *;
+
+.container {
+  display: grid;
+  width: 100%;
+  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.productSaleCard {
+  @include shadow;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 12px;
+  width: 100%;
+  background-color: $bgColor;
+  text-overflow: ellipsis;
+  align-items: flex-start;
+}
+
+.productSale_image_div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  width: 100%;
+  aspect-ratio: 1.4;
+  max-height: 340px;
+}
+
+.productSale_img {
+  object-fit: cover;
+}
+
+.productSale_text_discount {
+  background-color: $redSale;
+  color: $textColorWhite;
+  border-radius: 3px;
+  padding: 0.3rem;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Inter';
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

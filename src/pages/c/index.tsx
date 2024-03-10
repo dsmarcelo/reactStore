@@ -6,14 +6,14 @@ import { ICategory } from '../../interfaces/category';
 import { getCategories } from '../../lib/category/getCategories';
 
 interface Props {
-  categoryList: ICategory[];
+  categories: ICategory[];
 }
 
-const index: React.FC<Props> = ({ categoryList }) => {
+const index: React.FC<Props> = ({ categories }) => {
   return (
     <>
       <Header />
-      <CategoryContainer categoryList={categoryList} />
+      <CategoryContainer categories={categories} />
     </>
   )
 }
@@ -21,7 +21,7 @@ const index: React.FC<Props> = ({ categoryList }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const result = await getCategories();
 
-  const categoryList = result.map((category) => {
+  const categories = result.map((category) => {
     return {
       id: category.id,
       name: category.name,
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      categoryList,
+      categories,
     },
   };
 };

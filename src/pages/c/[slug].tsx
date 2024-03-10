@@ -4,7 +4,8 @@ import ProductContainer from '../../components/productContainer';
 import { IProduct } from '../../interfaces/productI';
 import { prisma } from '../../lib/prisma';
 import { getCategories, getCategoryBySlug } from '../../lib/category/getCategories';
-import Header from '../../components/Header/header';
+import style from '@/styles/Product.module.scss'
+import { MainLayout } from 'src/components/MainLayout';
 interface Props {
   productList: IProduct[];
   categoryName: string;
@@ -12,14 +13,9 @@ interface Props {
 
 export default function Category({ productList, categoryName }: Props) {
   return (
-    <>
-      <Header />
-      <main>
-        <div style={{ marginTop: '110px' }} >
-          <ProductContainer productList={productList} />
-        </div>
-      </main>
-    </>
+    <MainLayout>
+      <ProductContainer productList={productList} />
+    </MainLayout>
   );
 }
 

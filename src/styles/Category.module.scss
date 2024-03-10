@@ -3,45 +3,42 @@
 .categoryCardContainer {
   position: relative;
   display: grid;
-  grid-column: 2;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.3rem;
+  gap: 6px;
   width: 100%;
-  max-width: 800px;
-  // @include flexCenter(column);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
 }
 
 .categoryCard {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0.2rem;
   border: 2px solid rgba(170, 170, 170, 0.185);
   border-radius: 12px;
-  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
   width: 100%;
   aspect-ratio: 1;
-  max-width: 400px;
   text-overflow: ellipsis;
   align-items: center;
+  overflow: hidden;
+  @include shadowSM
 }
 
 .categoryCard_image_div {
   position: relative;
   overflow: hidden;
-  border-radius: 9px;
   width: 100%;
   background-color:black;
   height: 100%;
-  // background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #00000093 100%);
-  // z-index: 1;
 }
 
 .categoryCard_img {
   object-fit: cover;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.978) 70%, #00000000 100%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.978) 70%, #00000000 100%);
-  // z-index: -1;
+  mask-image: linear-gradient(180deg, rgb(0, 0, 0) 70%, #00000000 95%);
+  -webkit-mask-image: linear-gradient(180deg, rgb(0, 0, 0) 70%, #00000000 95%);
 }
 
 .categoryCard_text_div {
@@ -53,10 +50,8 @@
 .categoryCard_text_name {
   margin: 0;
   text-align: center;
-  // font-size: 1.7rem;
   color: white;
   padding-top: 2px;
-  // background-color: rgba(0, 0, 0, 0.233);
   text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.329);
   font-weight: 600;
 }

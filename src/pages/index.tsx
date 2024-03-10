@@ -3,7 +3,6 @@ import Head from 'next/head';
 import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
 import Header from '../components/Header/header';
-import SaleProductCard from '../components/saleProductCard';
 import styles from '../styles/Home.module.scss';
 import { IProduct } from '../interfaces/productI';
 import BannerCarousel from '../components/BannerCarousel/BannerCarousel';
@@ -11,6 +10,8 @@ import { getProducts } from '../lib/product/getProducts';
 import { getCategories } from '../lib/category/getCategories';
 import { useCategoryProvider } from '../lib/contexts/CategoryContext';
 import ProductCarousel from '../components/ProductCarousel/ProductCarousel';
+import { CategoryAds } from 'src/components/CategoryAds/CategoryAds';
+import { MainLayout } from 'src/components/MainLayout';
 
 interface Props {
   productList: IProduct[];
@@ -27,13 +28,12 @@ const Home: React.FC<Props> = ({ productList }) => {
         <link rel="icon" href="/rs-logo-sm-dark.svg" />
       </Head>
 
-      <Header />
-      <main className={styles.main}>
+      <MainLayout>
         <BannerCarousel />
         <ProductCarousel productList={productList} />
-        <CategoryContainer categoryList={categories} />
-        <SaleProductCard />
-      </main>
+        <CategoryContainer categories={categories} />
+        <CategoryAds />
+      </MainLayout>
     </div>
   );
 };
