@@ -6,7 +6,6 @@
   width: 100%;
   z-index: 20;
   @include  backgroundBlur;
-  height: 96px;
   @media (max-width: 800px) {
     position: relative;
   }
@@ -23,8 +22,8 @@
   width: 100%;
   flex-direction: row;
   justify-content: stretch;
-  align-items: center;
-  height: 48px;
+  align-items: end;
+  height: 54px;
 }
 
 .header_logo_container {
@@ -76,7 +75,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 36px;
+  height: 48px;
 }
 
 .header_SearchBar {
@@ -128,32 +127,6 @@
 
 .btn_back {
   box-shadow: none;
-}
-
-.white {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  font-weight: 600;
-  height: 48px;
-
-  button {
-    background: none;
-    color: $textColor;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    width: 64px;
-    height: 100%;
-    &:hover {
-      color: $gray-500;
-    }
-    &:focus {
-      background-color: $bgColorDarker;
-    }
-  }
 }
 
 .category_name {
