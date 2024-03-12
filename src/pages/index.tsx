@@ -2,8 +2,6 @@ import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import CategoryContainer from '../components/categoriesContainer';
-import Header from '../components/Header/header';
-import styles from '../styles/Home.module.scss';
 import { IProduct } from '../interfaces/productI';
 import BannerCarousel from '../components/BannerCarousel/BannerCarousel';
 import { getProducts } from '../lib/product/getProducts';
