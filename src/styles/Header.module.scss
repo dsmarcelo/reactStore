@@ -1,14 +1,11 @@
 @use './abstracts' as *;
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 10;
   @include  backgroundBlur;
-  @media (max-width: 800px) {
-    position: relative;
-  }
 }
 
 .header_container {
@@ -22,8 +19,8 @@
   width: 100%;
   flex-direction: row;
   justify-content: stretch;
-  align-items: end;
-  height: 54px;
+  align-items: center;
+  height: 52px;
 }
 
 .header_logo_container {
@@ -145,10 +142,17 @@
   display: flex;
   height: 48px;
   overflow-y: hidden;
+  @include transition();
+}
+
+.hidden {
+  height: 0;
+  @include transition();
 }
 
 .login_dropdown {
   position: relative;
+  z-index: 10;
 
   &:hover .dropdown-content {
     display: block;
