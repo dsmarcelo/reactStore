@@ -10,6 +10,7 @@ import { useCategoryProvider } from '../lib/contexts/CategoryContext';
 import ProductCarousel from '../components/ProductCarousel/ProductCarousel';
 import { CategoryAds } from 'src/components/CategoryAds/CategoryAds';
 import { MainLayout } from 'src/components/MainLayout';
+import style from '@/styles/Home.module.scss'
 
 interface Props {
   productList: IProduct[];
@@ -28,8 +29,15 @@ const Home: React.FC<Props> = ({ productList }) => {
 
       <MainLayout>
         <BannerCarousel />
-        <ProductCarousel productList={productList} />
-        <CategoryContainer categories={categories} />
+        <div className={style.home_row_section}>
+          <h2 className={style.home_page_section_title}>Featured products</h2>
+          <ProductCarousel productList={productList} />
+        </div>
+        <div className={style.home_row_section}>
+          <h2 className={style.home_page_section_title}>Shop by catgory</h2>
+          <CategoryContainer categories={categories} />
+        </div>
+
         <CategoryAds />
       </MainLayout>
     </div>

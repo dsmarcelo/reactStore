@@ -4,6 +4,7 @@
   @include flexCenter(column);
   padding-right: 16px;
   padding-left: 16px;
+  margin: 0 auto;
   margin-bottom: 48px;
   margin-top: 148px;
   max-width: 1248px;
@@ -14,4 +15,16 @@
     padding-right: 12px;
     padding-left: 12px;
   }
+}
+
+.home_row_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+}
+
+.home_page_section_title {
+  width: 100%;
 }
