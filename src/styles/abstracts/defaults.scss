@@ -34,6 +34,10 @@ a {
   text-decoration: none;
 }
 
+ol, ul {
+  list-style: none;
+}
+
 @mixin button {
   border: 1px solid $borderMuted;
   text-align: center;
