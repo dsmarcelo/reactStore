@@ -52,7 +52,6 @@ export const SideMenu: React.FC<Props> = ({ handleSideMenuState, data, status })
             <li key={i}>
               <Link className={style.categoryLink} href={`/c/${category.slug}`}>
                 {category.name}
-                <Image src={arrow_right_w} alt="" width={20} height={100} className={style.arrow_icon} />
               </Link>
             </li>
           ))}
