@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import style from '@/styles/SideMenu.module.scss'
 import Link from 'next/link';
 import { useCategoryProvider } from 'src/lib/contexts/CategoryContext';
 import { IoCloseOutline } from "react-icons/io5";
-import arrow_right_w from "public/icons/arrow-right-w.svg"
 import { FaHouse } from "react-icons/fa6";
-import Image from 'next/image';
 
 interface Props {
   data: any;
