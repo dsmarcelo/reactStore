@@ -11,9 +11,9 @@ export const MainLayout = ({ children }: Props) => {
   return (
     <div className={style.layout}>
       <Header />
-      <main className={style.main}>
+      <div className={style.main}>
         {children}
-      </main>
+      </div>
       <Footer />
     </div>
   )

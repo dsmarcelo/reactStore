@@ -3,70 +3,71 @@
 .categoryCardContainer {
   position: relative;
   display: grid;
-  gap: 6px;
+  gap: 12px;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media (max-width: 600px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 .categoryCard {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  border: 2px solid rgba(170, 170, 170, 0.185);
+  flex-direction: row;
+  border: 1px solid $border;
   border-radius: 12px;
   width: 100%;
-  aspect-ratio: 1;
+  gap: 12px;
+  aspect-ratio: 4;
   text-overflow: ellipsis;
   align-items: center;
   overflow: hidden;
+  background-color: $bcLight;
   @include shadowSM;
-  @include transition;
+  @include transition(0.2s);
+
   &:hover {
     .categoryCard_image_div {
-      filter: brightness(70%) blur(4px);
-      @include transition(.1s);
-}
+      box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
+      @include transition(0.2s);
+    }
+
     .categoryCard_text_div {
-      bottom: 20%;
-      @include transition(.2s);
+      margin-left: 6px;
+      @include transition(0.2s);
     }
   }
-  &::after {
-    @include transition(.2s);
 
+  @media (max-width: 600px) {
+    aspect-ratio: 4;
   }
 }
 
 .categoryCard_image_div {
   position: relative;
   aspect-ratio: 1;
-  width: 100%;
-  background-color:black;
+  height: 100%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
 .categoryCard_img {
   object-fit: cover;
-  mask-image: linear-gradient(180deg, rgb(0, 0, 0) 70%, #00000000 95%);
-  -webkit-mask-image: linear-gradient(180deg, rgb(0, 0, 0) 70%, #00000000 95%);
 }
 
 .categoryCard_text_div {
-  position: absolute;
-  width: 90%;
-  bottom: 15px;
+  max-width: 70%;
 }
 
 .categoryCard_text_name {
-  margin: 0;
-  text-align: center;
-  color: white;
-  font-size: 32px;
-  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.329);
-  font-weight: 600;
-}
+  color: $textColor;
 
+  @media (max-width: 600px) {
+    font-size: 1.15rem;
+  }
+}

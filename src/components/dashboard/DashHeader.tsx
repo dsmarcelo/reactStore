@@ -2,7 +2,7 @@ import React from 'react'
 import style from '@/styles/DashHeader.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from '@/public/Logo.png';
+import Logo from 'public/Logo.png';
 import SearchBar from '../Header/SearchBar';
 import { FiLogOut } from "react-icons/fi";
 import { FaUserAlt } from "react-icons/fa";

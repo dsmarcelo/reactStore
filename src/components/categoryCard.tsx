@@ -29,7 +29,7 @@ const CategoryCard: React.FC<Props> = ({ category }) => {
           />
         </div>
         <div className={styles.categoryCard_text_div}>
-          <p className={styles.categoryCard_text_name}>{name}</p>
+          <h3 className={styles.categoryCard_text_name}>{name}</h3>
         </div>
       </div>
     </Link>

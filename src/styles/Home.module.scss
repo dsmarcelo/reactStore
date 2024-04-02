@@ -4,13 +4,31 @@
   @include flexCenter(column);
   padding-right: 16px;
   padding-left: 16px;
+  margin: 0 auto;
   margin-bottom: 48px;
   margin-top: 148px;
   max-width: 1248px;
   gap: 64px;
   @media (max-width: 600px) {
-    gap: 16px;
+    margin-top: 124px;
+    gap: 24px;
     padding-right: 12px;
     padding-left: 12px;
   }
+}
+
+.home_row_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  align-items: center;
+  @media (max-width: 600px) {
+    gap: 12px;
+
+  }
+}
+
+.home_page_section_title {
+  width: 100%;
 }
