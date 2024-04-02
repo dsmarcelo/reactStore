@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useCategoryProvider } from 'src/lib/contexts/CategoryContext';
 import { IoCloseOutline } from "react-icons/io5";
 import arrow_right_w from "public/icons/arrow-right-w.svg"
+import { FaHouse } from "react-icons/fa6";
 import Image from 'next/image';
 
 interface Props {
@@ -40,9 +41,12 @@ export const SideMenu: React.FC<Props> = ({ handleSideMenuState, data, status })
                 <Link href={'/signup'} className={`${style.button} ${style.signin_button}`}>Sign In</Link>
                 <Link href={"/login"} className={`${style.button} ${style.login_button}`}>Log In</Link>
               </div>
-            </div>
-          }
+            </div>}
         </div>
+        <Link href={'/'} onClick={() => handleClose()} className={style.home_button}>
+          Home
+          <FaHouse width={20} height={100} className={style.arrow_icon} />
+        </Link>
         <ul className={style.categoriesContainer}>
           {categories.map((category, i: number) => (
             <li key={i}>
