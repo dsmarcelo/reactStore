@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import style from '@/styles/sideMenu.module.scss'
+import style from '@/styles/SideMenu.module.scss'
 import Link from 'next/link';
 import { useCategoryProvider } from 'src/lib/contexts/CategoryContext';
 import { IoCloseOutline } from "react-icons/io5";
