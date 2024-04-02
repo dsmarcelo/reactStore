@@ -81,6 +81,9 @@
   display: flex;
   color: $textColorWhite;
   animation: slide-in .2s ease-out forwards ;
+  *{
+    animation: slide-in .3s ease-out forwards ;
+  }
 }
 
 .sideMenu.closed {
