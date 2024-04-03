@@ -13,8 +13,8 @@ export default function BannerCarousel() {
   function fetchImages() {
     const imagesQty = 3
     const images: string[] = []
-    for (let i = 0; i < imagesQty; i++) {
-      images.push(`/carousel/carousel-ad-${i}.jpg`)
+    for (let i = 1; i <= imagesQty; i++) {
+      images.push(`/carousel/banner-${i}.jpg`)
     }
     if (images) {
       setImagesLoaded(true)
@@ -65,6 +65,8 @@ export default function BannerCarousel() {
       },
     ])
 
+  if (!imagesLoaded) return null;
+
   return (
     <div className={`navigation-wrapper ${style.navigation_wrapper}`}>
       {imagesLoaded && (
@@ -72,10 +74,11 @@ export default function BannerCarousel() {
           {items.map((image: string, i: number) =>
             <div key={i} className={`keen-slider__slide`}>
               <Image
+                className={style.carousel_image}
                 src={image}
-                alt={''}
-                objectFit="cover"
+                alt={'Banner Image'}
                 fill
+                priority
               />
             </div>
           )}
