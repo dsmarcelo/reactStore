@@ -13,8 +13,8 @@ export default function BannerCarousel() {
   function fetchImages() {
     const imagesQty = 3
     const images: string[] = []
-    for (let i = 0; i < imagesQty; i++) {
-      images.push(`/carousel/carousel-ad-${i}.jpg`)
+    for (let i = 1; i <= imagesQty; i++) {
+      images.push(`/carousel/banner-${i}.jpg`)
     }
     if (images) {
       setImagesLoaded(true)
