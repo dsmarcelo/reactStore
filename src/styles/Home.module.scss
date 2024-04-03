@@ -9,7 +9,7 @@
   margin-top: 148px;
   max-width: 1248px;
   gap: 64px;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     margin-top: 124px;
     gap: 24px;
     padding-right: 12px;
@@ -23,7 +23,7 @@
   width: 100%;
   gap: 24px;
   align-items: center;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     gap: 12px;
 
   }

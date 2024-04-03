@@ -74,6 +74,7 @@ export default function BannerCarousel() {
           {items.map((image: string, i: number) =>
             <div key={i} className={`keen-slider__slide`}>
               <Image
+                className={style.carousel_image}
                 src={image}
                 alt={'Banner Image'}
                 fill
