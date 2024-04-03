@@ -65,6 +65,8 @@ export default function BannerCarousel() {
       },
     ])
 
+  if (!imagesLoaded) return null;
+
   return (
     <div className={`navigation-wrapper ${style.navigation_wrapper}`}>
       {imagesLoaded && (
@@ -73,9 +75,9 @@ export default function BannerCarousel() {
             <div key={i} className={`keen-slider__slide`}>
               <Image
                 src={image}
-                alt={''}
-                objectFit="cover"
+                alt={'Banner Image'}
                 fill
+                priority
               />
             </div>
           )}
