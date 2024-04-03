@@ -8,7 +8,7 @@ Renomeie o arquivo ".env.copy" para ".env", que está na pasta ./back-end/
 Altere a variável `DATABASE_URL` para uma versão em cloud do MongoDB se necessário.
 ### Para instalar as dependências:
 _Dentro da pasta raiz_:
-`npm run prestart`
+`npm install`
 #### Para iniciar o front-end
 *Dentro da pasta raiz:
 `npm run dev`
